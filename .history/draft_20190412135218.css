@@ -338,7 +338,7 @@ q {
 	margin: var(--mainpaddng) 0;
 	color: var(--hight);
 	/* border-radius: var(--radius); */
-	padding: 0 var(--mainpaddng);
+	padding: 2px var(--mainpaddng);
 	border-left: 3px solid var(--brand);
 }
 
