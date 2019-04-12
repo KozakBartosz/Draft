@@ -338,24 +338,16 @@ fieldset > legend {
 details {
 	padding: var(--mainpaddng);
 	border-radius: var(--radius);
-	padding-bottom: calc(var(--mainpaddng) + var(--radius));
 	background: var(--low);
 }
-
-details:last-of-type {
-	padding-bottom: var(--mainpaddng);
-}
-
 details + details {
 	margin-top: calc(var(--radius) * -1);
-	border-top: 1px solid var(--mainbg);
+	border-top: var(--radius) solid var(--low);
 	border-radius: 0 0 var(--radius) var(--radius);
 }
-
 details[open],
 details:hover:not([open]) {
 	background: var(--like);
-	z-index: 1;
 }
 details summary {
 	cursor: pointer;
@@ -365,11 +357,11 @@ details summary {
 
 table {
 	/* border-collapse: collapse; */
-	margin: var(--mainpaddng) -1px;
-	border-radius: calc(var(--radius) + 2px);
-	width: calc(100% + 2px);
+	margin: var(--mainpaddng) -2px;
+	border-radius: calc(var(--radius) + 4px);
+	width: calc(100% + 4px);
 	overflow: hidden;
-	border-spacing: 1px;
+	border-spacing: 2px;
 }
 td,
 th {

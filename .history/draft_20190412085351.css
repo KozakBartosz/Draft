@@ -107,19 +107,11 @@ body {
 label {
 	display: block;
 }
-a,
-a:active,
+
 button,
-button:active,
 input,
-input:active,
-textarea,
-details,
-summary,
-th,
-td {
-	outline: none;
-	box-shadow: none;
+textarea {
+	vertical-align: middle;
 	transition: background-color 0.2s ease, box-shadow 0.2s ease,
 		transform 0.2s ease;
 }
@@ -169,7 +161,6 @@ textarea {
 	border-radius: var(--radius);
 	outline: none;
 	-webkit-appearance: none;
-	vertical-align: middle;
 }
 input[type="number"] {
 	max-width: calc(var(--mainpaddng) * 5);
@@ -338,38 +329,26 @@ fieldset > legend {
 details {
 	padding: var(--mainpaddng);
 	border-radius: var(--radius);
-	padding-bottom: calc(var(--mainpaddng) + var(--radius));
 	background: var(--low);
+	transition: all 0.25s ease;
 }
-
-details:last-of-type {
-	padding-bottom: var(--mainpaddng);
-}
-
 details + details {
 	margin-top: calc(var(--radius) * -1);
-	border-top: 1px solid var(--mainbg);
+	padding-top: calc(var(--mainpaddng) + var(--radius));
+	border-top: none;
 	border-radius: 0 0 var(--radius) var(--radius);
 }
-
-details[open],
-details:hover:not([open]) {
+details[open] {
 	background: var(--like);
-	z-index: 1;
-}
-details summary {
-	cursor: pointer;
-	margin: calc(var(--mainpaddng) * -1);
-	padding: var(--mainpaddng);
 }
 
 table {
 	/* border-collapse: collapse; */
-	margin: var(--mainpaddng) -1px;
-	border-radius: calc(var(--radius) + 2px);
-	width: calc(100% + 2px);
+	margin: var(--mainpaddng) -2px;
+	border-radius: calc(var(--radius) + 4px);
+	width: calc(100% + 4px);
 	overflow: hidden;
-	border-spacing: 1px;
+	border-spacing: 2px;
 }
 td,
 th {
@@ -377,6 +356,7 @@ th {
 	background: var(--low);
 }
 th {
+	border-bottom: 3px solid var(--midi);
 	color: var(--textContrast);
 }
 tr:hover td,
