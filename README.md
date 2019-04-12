@@ -8,6 +8,7 @@ The idea behind Draft.css is to create the most beautiful, useful and interestin
 
 ### How use?
 All you have to do is add this code to the head section:
+
 `<link rel="stylesheet" href="https://test.kozakbartosz.pl/draft/def.css" />`
 
 *kozakbartosz.pl*
