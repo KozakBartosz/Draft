@@ -7,29 +7,42 @@
 		<title>Draft.css</title>
 		<link rel="stylesheet" href="draft.css" />
 	</head>
-	<body>
-		<h1><input type="checkbox" checked="checked" /> Draft.css</h1>
-		<div style="float: right">
-			Thema:
-			<select name="" id="changethema">
-				<option value="0">Defult</option>
-				<option value="1">Defult mini</option>
-				<option value="2">Light</option>
-				<option value="3">Blood</option>
-				<option value="4">Matrix</option>
-			</select>
-		</div>
+	<body style="--sticky: calc(var(--mainpaddng) * 2 + 52px);">
+		<header>
+			<div style="float: right">
+				Thema:
+				<select name="" id="changethema">
+					<option value="0">Defult</option>
+					<option value="1">Defult mini</option>
+					<option value="2">Light</option>
+					<option value="3">Blood</option>
+					<option value="4">Matrix</option>
+				</select>
+			</div>
+			<h1 style="margin-bottom: 0">
+				<input type="checkbox" checked="checked" /> Draft.css
+			</h1>
+		</header>
 		<h1>The most simple css framwork</h1>
-		<h2>What is draft.css</h2>
+		<h2>What is <mark>draft.css</mark></h2>
 		<p>
-			Framwork is targeted at quickly creating prototypes of forms and
-			simple template. Designed to written html code looked beautiful and
+			Draft.css is targeted at quickly creating prototypes of forms and
+			simple templates. Designed to written html code looked beautiful and
 			did not require any class and non-standard elements.
 		</p>
-		<h2>How use</h2>
-		<p>All you have to do is add this code to the head section:</p>
 
-		<pre><code>&lt;link rel="stylesheet" href="https://kozakbartosz.pl/draft/def.css" /&gt;</code></pre>
+		<h2>Idea</h2>
+		<p>
+			The idea behind <strong>Draft.css</strong> is to create the most
+			beautiful, useful and interesting styles without using Javascript.
+		</p>
+		<h2>How use?</h2>
+		<p>
+			All you have to do is add this code to the
+			<mark>head</mark> section:
+		</p>
+
+		<pre><code>&lt;link rel="stylesheet" href="https://test.kozakbartosz.pl/draft/def.css" /&gt;</code></pre>
 
 		<h1>Examples:</h1>
 
@@ -54,6 +67,23 @@
 		<label> <input type="checkbox" /> facilis non? </label>
 
 		<hr />
+
+		<p>
+			Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam
+			veniam iusto iste repellendus in alias molestias, impedit assumenda
+			incidunt at natus, eos dicta eveniet blanditiis ad sunt architecto
+			totam perspiciatis!
+		</p>
+
+		<p>
+			Lorem ipsum dolor sit
+			<mark
+				>amet consectetur, adipisicing elit. Ipsam, perferendis soluta
+				sit nam ea est hic. Amet ipsam ipsum, eaque non voluptatibus
+				quis tenetur recusandae maxime suscipit laborum,</mark
+			>
+			sunt et!
+		</p>
 
 		<h3>Code:</h3>
 		<pre><code>// This logs a message to the console<br />console.log('Hello,world!')</code></pre>
@@ -88,7 +118,7 @@
 		<label>
 			Inpit number <input type="number" / value="1">
 		</label>
-		Data:
+		Date:
 		<p>
 			<input type="date" />
 			<input type="time" />
@@ -97,11 +127,22 @@
 			Nazwa:
 			<select name="" id="">
 				<option value="">Wybierz</option>
-				<option value="">jeden</option>
-				<option value="">dwa</option>
-				<option value="">trzy</option>
+				<option value="">Fuga aut vero</option>
+				<option value="">veritatis accusamus</option>
+				<option value="">quam</option>
 			</select>
 		</label>
+		<label>
+			Nazwa:
+			<select name="" id="" multiple>
+				<option value="">consectetur adipisicing</option>
+				<option value="">Nemo nihil unde</option>
+				<option value="">animi mollitia</option>
+				<option value="">dolor sit amet</option>
+			</select>
+		</label>
+
+		<h2>Simple table</h2>
 
 		<table>
 			<tr>
@@ -119,6 +160,82 @@
 				<td>lorem</td>
 				<td>lorem</td>
 			</tr>
+		</table>
+
+		<h2>Adv table</h2>
+		<p>
+			When we added the <code>&lt;thead&gt;</code> and
+			<code>&lt;tbody&gt;</code> table has
+			<code>table-layout: fixed</code> and
+			<code>position: sticky</code> for thead
+		</p>
+
+		<table>
+			<thead>
+				<tr>
+					<th width="5%">#</th>
+					<th>Kod</th>
+					<th>Nazwa</th>
+					<th>Opis</th>
+					<th width="120px"></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td width="5%">1</td>
+					<td><code>EDG-651</code></td>
+					<td>Lorem ipsum dolor</td>
+					<td>
+						Lorem ipsum dolor sit amet, consectetur adipisicing
+						elitdolor sitamet
+					</td>
+					<td width="120px" style="text-align: right;">
+						<input type="checkbox" />
+					</td>
+				</tr>
+				<tr>
+					<td width="5%">2</td>
+					<td><code>EDG-652</code></td>
+					<td>Lorem ipsum dolor</td>
+					<td>
+						Lorem ipsum dolor sit amet, consectetur adipisicing
+						elitdolor sitamet
+					</td>
+					<td width="120px" style="text-align: right;">
+						<input type="checkbox" />
+					</td>
+				</tr>
+				<tr>
+					<td width="5%">3</td>
+					<td><code>EDX-652*</code></td>
+					<td>Lorem ipsum dolor</td>
+					<td>
+						Lorem ipsum dolor sit amet, consectetur adipisicing
+						elitdolor sitamet
+					</td>
+					<td width="120px" style="text-align: right;">
+						<input type="checkbox" />
+					</td>
+				</tr>
+				<tr>
+					<td width="5%">5</td>
+					<td><code>EDD-655</code></td>
+					<td>Lorem ipsum dolor</td>
+					<td>
+						Lorem ipsum dolor sit amet, consectetur adipisicing
+						elitdolor sitamet
+					</td>
+					<td width="120px" style="text-align: right;">
+						<input type="checkbox" />
+					</td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<td colspan="4">Lorem ipsum doreta: <b>3</b></td>
+					<td width="120px"><button>Remove</button></td>
+				</tr>
+			</tfoot>
 		</table>
 
 		<h3>Checkbox</h3>
@@ -200,7 +317,18 @@
 			<input
 				type="email"
 				name="email"
+				required=""
 				id="email"
+				value=""
+				placeholder="john.doe@gmail.com"
+			/>
+			<label for="text">Text</label>
+			<input
+				type="text"
+				name="email"
+				required=""
+				id="text"
+				value=""
 				placeholder="john.doe@gmail.com"
 			/>
 

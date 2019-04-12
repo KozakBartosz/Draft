@@ -21,6 +21,8 @@
 	--buttontext: #fff;
 
 	--fillhover: #1b2731;
+
+	--sticky: 0px;
 }
 /* 
 :root {
@@ -97,7 +99,7 @@ body {
 		"Helvetica Neue", sans-serif;
 	line-height: 1.5;
 	max-width: 800px;
-	margin: 20px auto;
+	margin: 0px auto;
 	padding: 0 var(--mainpaddng);
 	color: var(--text);
 	background: var(--mainbg);
@@ -202,12 +204,18 @@ input[type="button"] {
 	padding: var(--mainpaddng) calc(var(--mainpaddng) * 2);
 }
 
-select {
+select:not([multiple]) {
 	padding-right: calc(var(--mainpaddng) * 3);
 	background: var(--low)
 		url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22%23dbdbdb%22%20d%3D%22m%2010.025%2C1.7575%20-6.67%2C0%203.335%2C3.475%20z%22%20%2F%3E%3C%2Fsvg%3E")
 		100% 50%/27px 7px no-repeat;
 }
+
+/* input:not([value=""]):invalid,
+select:not([value=""]):invalid,
+textarea:not([value=""]):invalid {
+	box-shadow: 0 0 0 2px darkred;
+} */
 
 input:focus,
 select:focus,
@@ -230,7 +238,9 @@ input[type="button"]:hover {
 	box-shadow: 0 5px 20px -5px rgba(0, 0, 0, 0.35), 0 3px 0 0 var(--button);
 	transform: translateY(-3px);
 }
-button:active {
+button:active,
+input[type="submit"]:active,
+input[type="button"]:active {
 	transform: translateY(0px);
 	box-shadow: 0 5px 20px -5px rgba(0, 0, 0, 0.35);
 }
@@ -293,6 +303,19 @@ a:hover {
 	text-decoration: underline;
 	color: var(--brand);
 }
+
+mark {
+	background: linear-gradient(var(--brand), var(--brand)) 50% 100%/100% 40%
+		no-repeat;
+	background: var(--midi);
+	padding: 3px;
+	margin: -3px;
+	/* text-shadow: 1px 1px 1px var(--mainbg), -1px 1px 1px var(--mainbg),
+		0px 1px 1px var(--mainbg); */
+	color: var(--textContrast);
+	border-radius: var(--radius);
+}
+
 ul,
 ol,
 label,
@@ -305,7 +328,7 @@ code,
 kbd {
 	background: var(--low);
 	color: var(--code);
-	padding: var(--mainpaddng);
+	padding: 4px;
 	border-radius: var(--radius);
 }
 /* pre {
@@ -314,6 +337,7 @@ kbd {
 pre > code {
 	display: block;
 	overflow-x: auto;
+	padding: var(--mainpaddng);
 }
 img {
 	max-width: 100%;
@@ -364,12 +388,41 @@ details summary {
 }
 
 table {
+	/* display: block; */
+	/* overflow-x: auto; */
 	/* border-collapse: collapse; */
 	margin: var(--mainpaddng) -1px;
-	border-radius: calc(var(--radius) + 2px);
 	width: calc(100% + 2px);
-	overflow: hidden;
 	border-spacing: 1px;
+	position: relative;
+}
+tbody,
+tfoot,
+thead {
+	border-radius: calc(var(--radius) + 2px);
+	overflow: hidden;
+	background: var(--mainbg);
+	table-layout: fixed;
+	position: relative;
+	z-index: 0;
+	display: table;
+	width: calc(100% + 2px);
+}
+
+header,
+thead {
+	background: var(--mainbg);
+	position: sticky;
+	top: var(--sticky);
+	z-index: 5;
+	box-shadow: 0px 12px 15px -15px rgba(0, 0, 0, 0.35);
+}
+header {
+	z-index: 10;
+	top: 0px;
+	display: block;
+	padding: var(--mainpaddng);
+	margin: 0 calc(var(--mainpaddng) * -1) var(--mainpaddng);
 }
 td,
 th {
@@ -379,7 +432,6 @@ th {
 th {
 	color: var(--textContrast);
 }
-tr:hover td,
-tr:hover th {
+tr:hover td {
 	background-color: var(--fillhover);
 }
