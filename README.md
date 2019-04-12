@@ -1,5 +1,5 @@
 # Draft
-## The most simple css framwork
+## Simple CSS framework for your simple HTML
 ### What is draft.css
 Draft.css is targeted at quickly creating prototypes of forms and simple templates. Designed to written html code looked beautiful and did not require any class and non-standard elements.
 
