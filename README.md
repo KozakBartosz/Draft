@@ -11,4 +11,8 @@ All you have to do is add this code to the head section:
 
 `<link rel="stylesheet" href="https://test.kozakbartosz.pl/draft/def.css" />`
 
+
+### Demo:
+test.kozakbartosz.pl/draft
+
 *kozakbartosz.pl*
