@@ -13,6 +13,7 @@ All you have to do is add this code to the head section:
 
 
 ### Demo:
-test.kozakbartosz.pl/draft
+[test.kozakbartosz.pl/draft](http://test.kozakbartosz.pl/draft)
+
 
 *kozakbartosz.pl*
