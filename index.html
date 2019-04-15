@@ -5,6 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		<title>Draft.css</title>
+		<meta name="theme-color" content="#232a31" />
 		<link rel="stylesheet" href="draft.css" />
 		<style id="styleToRepacePlace"></style>
 	</head>
@@ -608,6 +609,10 @@
 				"styleToRepacePlace"
 			);
 
+			function getBgColor(style) {
+				return style.split("--mainbg: ")[1].split(";")[0];
+			}
+
 			function setTheme(i) {
 				if (!i || i == null || i == "Set thema") {
 					document.location.hash = "";
@@ -617,6 +622,10 @@
 				}
 				var theme = themes[i];
 				styleToRepacePlace.innerText = theme;
+				var metaThemeColor = document.querySelector(
+					"meta[name=theme-color]"
+				);
+				metaThemeColor.setAttribute("content", getBgColor(theme));
 			}
 
 			var hash = document.location.hash;
