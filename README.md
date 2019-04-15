@@ -13,7 +13,7 @@ All you have to do is add this code to the head section:
 
 
 ### Demo:
-[test.kozakbartosz.pl/draft](http://test.kozakbartosz.pl/draft)
+[https://kozakbartosz.github.io/Draft/](kozakbartosz.github.io/Draft/)
 
 
 *kozakbartosz.pl*
