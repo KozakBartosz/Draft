@@ -23,6 +23,9 @@
 	--fillhover: #1b2731;
 
 	--sticky: 0px;
+
+	/* --mainpaddng: 11px;
+	--radius: 11px; */
 }
 /* 
 :root {
@@ -305,15 +308,15 @@ a:hover {
 }
 
 mark {
-	background: linear-gradient(var(--brand), var(--brand)) 50% 100%/100% 40%
+	background: linear-gradient(var(--hight), var(--hight)) 45% 92%/100% 35%
 		no-repeat;
-	background: var(--midi);
+	/* background: var(--midi); */
 	padding: 3px;
 	margin: -3px;
 	/* text-shadow: 1px 1px 1px var(--mainbg), -1px 1px 1px var(--mainbg),
 		0px 1px 1px var(--mainbg); */
 	color: var(--textContrast);
-	border-radius: var(--radius);
+	/* border-radius: var(--radius); */
 }
 
 ul,
@@ -410,7 +413,7 @@ table {
 tbody,
 tfoot,
 thead {
-	border-radius: calc(var(--radius) + 2px);
+	/* border-radius: 0; */
 	overflow: hidden;
 	background: var(--mainbg);
 	table-layout: fixed;
@@ -420,14 +423,29 @@ thead {
 	width: calc(100% + 2px);
 }
 
+thead:first-child,
+tbody:first-child,
+tfoot:first-child {
+	border-top-left-radius: calc(var(--radius) + 2px);
+	border-top-right-radius: calc(var(--radius) + 2px);
+}
+tfoot:last-child,
+tbody:last-child,
+thead:last-child {
+	border-bottom-left-radius: calc(var(--radius) + 2px);
+	border-bottom-right-radius: calc(var(--radius) + 2px);
+}
+
 header,
 thead {
 	background: var(--mainbg);
 	position: sticky;
+	top: 0;
 	top: var(--sticky);
 	z-index: 5;
 	box-shadow: 0px 12px 15px -15px rgba(0, 0, 0, 0.35);
 }
+
 header {
 	z-index: 10;
 	top: 0px;
@@ -445,4 +463,25 @@ th {
 }
 tr:hover td {
 	background-color: var(--fillhover);
+}
+
+footer {
+	margin: calc(var(--mainpaddng) * 3) 0 0;
+	padding: calc(var(--mainpaddng) * 2) 0;
+	position: relative;
+	text-align: center;
+	/* position: relative; */
+}
+
+footer:after {
+	z-index: -1;
+	background: var(--low);
+	content: "";
+	display: block;
+	position: absolute;
+	/* width: 100%; */
+	right: calc(var(--mainpaddng) * -1);
+	left: calc(var(--mainpaddng) * -1);
+	top: calc(var(--mainpaddng) * -1);
+	height: calc(100% + var(--mainpaddng) * 2);
 }

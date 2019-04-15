@@ -6,6 +6,7 @@
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		<title>Draft.css</title>
 		<link rel="stylesheet" href="draft.css" />
+		<style id="styleToRepacePlace"></style>
 	</head>
 	<body style="--sticky: calc(var(--mainpaddng) * 2 + 52px);">
 		<header>
@@ -13,10 +14,13 @@
 				Thema:
 				<select name="" id="changethema">
 					<option value="0">Defult</option>
-					<option value="1">Defult mini</option>
+					<option value="1">Defult compact</option>
 					<option value="2">Light</option>
-					<option value="3">Blood</option>
-					<option value="4">Matrix</option>
+					<option value="3">Light square</option>
+					<option value="4">Grey Scale Dark</option>
+					<option value="5">Grey Scale Light</option>
+					<option value="6">Blood</option>
+					<option value="7">Matrix</option>
 				</select>
 			</div>
 			<h1 style="margin-bottom: 0">
@@ -100,8 +104,6 @@
 		<h3>Code:</h3>
 		<pre><code>// This logs a message to the console<br />console.log('Hello,world!')</code></pre>
 
-		<h2>Forms</h2>
-
 		<ul>
 			<li>Lorem, ipsum dolor.</li>
 			<li>Commodi, aut ipsa.</li>
@@ -109,6 +111,9 @@
 			<li>Quae, in praesentium.</li>
 			<li>Aut, facilis non?</li>
 		</ul>
+
+		<h2>Forms</h2>
+
 		<ol>
 			<li>Lorem, ipsum dolor.</li>
 			<li>Commodi, aut ipsa.</li>
@@ -385,130 +390,236 @@
 		</p>
 
 		<button>Send</button>
+
+		<footer>
+			2019 © Draft.css by
+			<a href="https://kozakbartosz.pl">kozakbartosz.pl</a>
+		</footer>
+
 		<script>
 			var themes = [
-				[
-					{ brand: "#41adff" },
-					{ mainbg: "#232a31" },
-					{ mainpaddng: "14px" },
-					{ radius: "7px" },
+				// Defult
+				`:root {
+					--brand: #41adff;
+					--mainbg: #232a31;
+					--mainpaddng: 14px;
+					--radius: 7px;
 
-					{ low: "#161f27" },
-					{ like: "#2b3c4b" },
-					{ midi: "#324759" },
-					{ hight: "#0b7392" },
+					--low: #161f27;
+					--like: #2b3c4b;
+					--midi: #324759;
+					--hight: #0b7392;
 
-					{ text: "#dbdbdb" },
-					{ textContrast: "#fff" },
+					--text: #dbdbdb;
+					--textContrast: #fff;
 
-					{ code: "#ffbe85" },
+					--code: #ffbe85;
 
-					{ button: "#2b3c4a" },
-					{ buttonhover: "#334a5e" },
-					{ buttontext: "#fff" },
+					--button: #2b3c4a;
+					--buttonhover: #334a5e;
+					--buttontext: #fff;
 
-					{ fillhover: "#1b2731" }
-				],
-				[
-					{ brand: "#41adff" },
-					{ mainbg: "#232a31" },
-					{ mainpaddng: "12px" },
-					{ radius: "12px" },
+					--fillhover: #1b2731;
 
-					{ low: "#161f27" },
-					{ like: "#2b3c4b" },
-					{ midi: "#324759" },
-					{ hight: "#0b7392" },
+					--sticky: 0px;
+				}`,
 
-					{ text: "#dbdbdb" },
-					{ textContrast: "#fff" },
+				// Defult compact
+				`:root {
+					--brand: #41adff;
+					--mainbg: #232a31;
+					--mainpaddng: 11px;
+					--radius: 11px;
 
-					{ code: "#ffbe85" },
+					--low: #161f27;
+					--like: #2b3c4b;
+					--midi: #324759;
+					--hight: #0b7392;
 
-					{ button: "#2b3c4a" },
-					{ buttonhover: "#334a5e" },
-					{ buttontext: "#fff" },
+					--text: #dbdbdb;
+					--textContrast: #fff;
 
-					{ fillhover: "#1b2731" }
-				],
-				[
-					{ brand: "#41adff" },
-					{ mainbg: "#ffffff" },
-					{ mainpaddng: "14px" },
-					{ radius: "7px" },
+					--code: #ffbe85;
 
-					{ low: "#e8f1fa" },
-					{ like: "#cfe2f7" },
-					{ midi: "#b2cee7" },
-					{ hight: "#1db5e4" },
+					--button: #2b3c4a;
+					--buttonhover: #334a5e;
+					--buttontext: #fff;
 
-					{ text: "#3f4646" },
-					{ textContrast: "#1a1f1f" },
+					--fillhover: #1b2731;
 
-					{ code: "#20595f" },
+					--sticky: 0px;
+				}`,
 
-					{ button: "#3dcca1" },
-					{ buttonhover: "#34e0ad" },
-					{ buttontext: "#fff" },
+				// Light
+				`:root {
+					--brand: #41adff;
+					--mainbg: #ffffff;
+					--mainpaddng: 13px;
+					--radius: 24px;
 
-					{ fillhover: "#e8f5ff" }
-				],
-				[
-					{ mainpaddng: "18px" },
-					{ radius: "3px" },
-					{ brand: "#c21a1a" },
-					{ mainbg: "#312323" },
+					--low: #f0f1f3;
+					--like: #cfe2f7;
+					--midi: #b2cee7;
+					--hight: #1db5e4;
 
-					{ code: "#ffbe85" },
+					--text: #3f4646;
+					--textContrast: #1a1f1f;
 
-					{ text: "#dbdbdb" },
-					{ textContrast: "#fff" },
+					--code: #20595f;
 
-					{ button: "#4a2b2b" },
-					{ buttonhover: "#5e3333" },
-					{ buttontext: "#fff" },
+					--button: #3dcca1;
+					--buttonhover: #34e0ad;
+					--buttontext: #fff;
 
-					{ fillhover: "#311b1b" },
+					--fillhover: #e8f5ff;
+				}`,
 
-					{ low: "#271616" },
-					{ like: "#4b2b2b" },
-					{ midi: "#593232" },
-					{ hight: "#800f0f" }
-				],
-				[
-					{ mainpaddng: "11px" },
-					{ radius: "13px" },
-					{ brand: "#1ac260" },
-					{ mainbg: "#233126" },
+				// Light square
+				`:root {
+					--brand: #41adff;
+					--mainbg: #ffffff;
+					--mainpaddng: 12px;
+					--radius: 1px;
 
-					{ code: "#c0ff85" },
+					--low: #f0f1f3;
+					--like: #cfe2f7;
+					--midi: #b2cee7;
+					--hight: #1db5e4;
 
-					{ text: "#dbdbdb" },
-					{ textContrast: "#fff" },
+					--text: #3f4646;
+					--textContrast: #1a1f1f;
 
-					{ button: "#324a2b" },
-					{ buttonhover: "#385e33" },
-					{ buttontext: "#fff" },
+					--code: #20595f;
 
-					{ fillhover: "#1b3122" },
+					--button: #3dcca1;
+					--buttonhover: #34e0ad;
+					--buttontext: #fff;
 
-					{ low: "#162717" },
-					{ like: "#2b4b2e" },
-					{ midi: "#32593f" },
-					{ hight: "#0f803a" }
-				]
+					--fillhover: #e8f5ff;
+				}`,
+
+				// Grey Scale Dark
+				`:root {
+					--mainpaddng: 14px;
+					--radius: 5px;
+					--brand: #464646;
+					--mainbg: #3c3c3c;
+
+					--code: #e6e6e6;
+
+					--text: #c7c7c7;
+					--textContrast: #e8e8e8;
+
+					--button: #5a5a5a;
+					--buttonhover: #696969;
+					--buttontext: #fff;
+
+					--fillhover: #232323;
+
+					--low: #2f2f2f;
+					--like: #3e3e3e;
+					--midi: #545454;
+					--hight: #777777;
+				}`,
+
+				// Grey Scale Light
+				`:root {
+					--mainpaddng: 14px;
+					--radius: 5px;
+					--brand: #bdbdbd;
+					--mainbg: #dedede;
+
+					--code: #000;
+
+					--text: #252525;
+					--textContrast: #000000;
+
+					--button: #5a5a5a;
+					--buttonhover: #696969;
+					--buttontext: #fff;
+
+					--fillhover: #c1c1c1;
+
+					--low: #a9a9a9;
+					--like: #c1c1c1;
+					--midi: #696969;
+					--hight: #9a9a9a;
+				}`,
+
+				// Blood
+
+				`:root {
+					--mainpaddng: 18px;
+					--radius: 3px;
+					--brand: #c21a1a;
+					--mainbg: #312323;
+
+					--code: #ffbe85;
+
+					--text: #dbdbdb;
+					--textContrast: #fff;
+
+					--button: #4a2b2b;
+					--buttonhover: #5e3333;
+					--buttontext: #fff;
+
+					--fillhover: #311b1b;
+
+					--low: #271616;
+					--like: #4b2b2b;
+					--midi: #593232;
+					--hight: #800f0f;
+				}`,
+
+				// Matrix
+				` :root {
+					--mainpaddng: 11px;
+					--radius: 13px;
+					--brand: #1ac260;
+					--mainbg: #233126;
+
+					--code: #c0ff85;
+
+					--text: #dbdbdb;
+					--textContrast: #fff;
+
+					--button: #324a2b;
+					--buttonhover: #385e33;
+					--buttontext: #fff;
+
+					--fillhover: #1b3122;
+
+					--low: #162717;
+					--like: #2b4b2e;
+					--midi: #32593f;
+					--hight: #0f803a;
+				}`
 			];
 
-			let changethema = document.getElementById("changethema");
-			let root = document.documentElement;
+			var changethema = document.getElementById("changethema");
+			var root = document.documentElement;
+
+			var styleToRepacePlace = document.getElementById(
+				"styleToRepacePlace"
+			);
+
+			function setTheme(i) {
+				var theme = themes[i];
+				styleToRepacePlace.innerText = theme;
+			}
+
+			var hash = document.location.hash;
+			if (hash) {
+				var value = hash.slice(1);
+				setTheme(value);
+				changethema.value = value;
+			}
 			changethema.addEventListener("change", e => {
-				console.log(e);
-				var theme = themes[e.target.value];
-				theme.forEach(element => {
-					var k = Object.keys(element)[0];
-					root.style.setProperty("--" + k, element[k]);
-				});
+				// console.log(e);
+				document.location.hash = e.target.value;
+				setTheme(e.target.value);
 			});
+			// document.location.hash
 		</script>
 	</body>
 </html>
