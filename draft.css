@@ -181,6 +181,10 @@ input[type="number"] {
 	max-width: calc(var(--mainpaddng) * 5);
 }
 
+input[type="range"] {
+	height: 5px;
+	padding: 0;
+}
 select:not([multiple]) {
 	padding-right: calc(var(--mainpaddng) * 3);
 	background: var(--low)
@@ -354,8 +358,21 @@ pre > code {
 	padding: var(--mainpaddng);
 }
 img {
+	display: inline-block;
 	max-width: 100%;
 }
+
+img:before {
+	content: "The image could not be loaded. (url: " attr(src) ")";
+	padding: calc(var(--mainpaddng) * 2) var(--mainpaddng);
+	color: var(--brand);
+	display: block;
+	font-size: 12px;
+	border-radius: calc(var(--radius));
+	background: var(--low);
+	border: var(--midi);
+}
+
 hr {
 	margin: var(--mainpaddng) 0;
 	border: none;
@@ -378,6 +395,8 @@ details {
 	border-radius: var(--radius);
 	padding-bottom: calc(var(--mainpaddng) + var(--radius));
 	background: var(--low);
+	position: relative;
+	list-style: none;
 }
 
 details:last-of-type {
@@ -393,14 +412,47 @@ details + details {
 details[open],
 details:hover:not([open]) {
 	background: var(--like);
-	z-index: 1;
+	/* z-index: 1; */
 }
-details summary {
+details > summary {
 	cursor: pointer;
+	display: block;
+	font-weight: bold;
 	margin: calc(var(--mainpaddng) * -1);
 	padding: var(--mainpaddng);
+	transition: color 0.2s ease;
+	padding-left: calc(var(--mainpaddng) * 3);
 }
 
+details > summary::after {
+	content: "";
+	position: absolute;
+	left: calc(var(--mainpaddng));
+	top: calc(var(--mainpaddng) - 10px + 0.55em);
+	border: 2px solid var(--brand);
+	/* border-width: 0 0 2px 2px; */
+	border-width: 2px 2px 0 0;
+	font-size: 2em;
+	height: 8px;
+	width: 8px;
+	transform: rotate(45deg);
+	transition: transform 0.2s ease;
+	transform-origin: 70% 30%;
+}
+
+details[open] > summary::after {
+	transform: rotate(135deg);
+}
+
+details[open] > summary {
+	color: var(--textContrast);
+	margin-bottom: var(--mainpaddng);
+	padding-bottom: 0;
+}
+
+details > summary::-webkit-details-marker {
+	display: none;
+}
 table {
 	/* display: block; */
 	/* overflow-x: auto; */
