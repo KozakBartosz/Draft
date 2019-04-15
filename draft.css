@@ -101,7 +101,7 @@ body {
 		"Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
 		"Helvetica Neue", sans-serif;
 	line-height: 1.5;
-	max-width: 800px;
+	max-width: 950px;
 	margin: 0px auto var(--mainpaddng);
 	padding: 0 var(--mainpaddng);
 	color: var(--text);
@@ -130,7 +130,7 @@ td {
 		transform 0.2s ease;
 }
 h1 {
-	font-size: 2.2em;
+	font-size: 2.1em;
 	margin-top: 0;
 }
 h1,
@@ -139,7 +139,7 @@ h3,
 h4,
 h5,
 h6 {
-	margin-bottom: 12px;
+	margin-bottom: 0px;
 }
 h1,
 h2,
@@ -441,9 +441,14 @@ thead {
 	background: var(--mainbg);
 	position: sticky;
 	top: 0;
+	bottom: 0;
 	top: var(--sticky);
 	z-index: 5;
 	box-shadow: 0px 12px 15px -15px rgba(0, 0, 0, 0.35);
+}
+tfoot {
+	position: sticky;
+	bottom: 0;
 }
 
 header {

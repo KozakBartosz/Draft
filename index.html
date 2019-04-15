@@ -9,23 +9,28 @@
 		<style id="styleToRepacePlace"></style>
 	</head>
 	<body style="--sticky: calc(var(--mainpaddng) * 2 + 52px);">
-		<header>
-			<div style="float: right">
-				Thema:
-				<select name="" id="changethema">
-					<option value="0">Defult</option>
-					<option value="1">Defult compact</option>
-					<option value="2">Light</option>
-					<option value="3">Light square</option>
-					<option value="4">Gray Scale Dark</option>
-					<option value="5">Gray Scale Light</option>
-					<option value="6">Blood</option>
-					<option value="7">Matrix</option>
-				</select>
-			</div>
-			<h1 style="margin-bottom: 0">
-				<input type="checkbox" checked="checked" /> Draft.css
+		<header
+			style="display: flex; justify-content: space-between; align-items: center; white-space: nowrap;"
+		>
+			<h1>
+				<input type="checkbox" checked="checked" />
+				<span>Draft</span>
+				<span
+					style="font-size: 13px; margin-left: -8px; margin-bottom: -2px;"
+					>.css</span
+				>
 			</h1>
+			<select name="" id="changethema">
+				<option>Set thema</option>
+				<option value="0">Defult</option>
+				<option value="1">DefultMini</option>
+				<option value="2">Light</option>
+				<option value="3">LightSquare</option>
+				<option value="4">GrayDark</option>
+				<option value="5">GrayLight</option>
+				<option value="6">Blood</option>
+				<option value="7">Matrix</option>
+			</select>
 		</header>
 		<h2>
 			Simple CSS framework for your simple HTML
@@ -604,6 +609,12 @@
 			);
 
 			function setTheme(i) {
+				if (!i || i == null || i == "Set thema") {
+					document.location.hash = "";
+					i = 0;
+				} else {
+					document.location.hash = i;
+				}
 				var theme = themes[i];
 				styleToRepacePlace.innerText = theme;
 			}
@@ -616,7 +627,6 @@
 			}
 			changethema.addEventListener("change", e => {
 				// console.log(e);
-				document.location.hash = e.target.value;
 				setTheme(e.target.value);
 			});
 			// document.location.hash
