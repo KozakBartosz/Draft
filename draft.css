@@ -248,7 +248,7 @@ button:hover,
 [type="reset"]:hover,
 [type="button"]:hover {
 	text-decoration: none;
-	color: var(--textContrast);
+	color: var(--buttontext);
 	background-color: var(--button);
 	box-shadow: 0 0px 0px 0px rgba(0, 0, 0, 0),
 		0 5px 20px -5px rgba(0, 0, 0, 0.35), 0 3px 0 0 rgba(0, 0, 0, 0.1),
@@ -352,6 +352,24 @@ input[type="range"]:focus::-ms-fill-lower {
 }
 input[type="range"]:focus::-ms-fill-upper {
 	background: var(--brand);
+}
+
+input[type="color"] {
+	-webkit-appearance: none;
+	border: none;
+	overflow: hidden;
+	border-radius: 100%;
+	padding: 13px;
+	width: calc(var(--mainpaddng) * 2);
+	height: calc(var(--mainpaddng) * 2);
+}
+input[type="color"]::-webkit-color-swatch-wrapper {
+	padding: 0;
+	border-radius: 100%;
+}
+input[type="color"]::-webkit-color-swatch {
+	border: none;
+	border-radius: 100%;
 }
 
 input:disabled,
