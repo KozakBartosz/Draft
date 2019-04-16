@@ -150,6 +150,8 @@ strong {
 }
 button,
 [role="button"],
+[type="range"],
+[type="color"],
 [type="submit"],
 [type="reset"],
 [type="button"],
@@ -157,6 +159,10 @@ button,
 [type="radio"] {
 	cursor: pointer;
 	display: inline-block;
+}
+output {
+	display: inline-block;
+	padding: 0 var(--mainpaddng);
 }
 
 input,
@@ -194,11 +200,6 @@ select:hover,
 textarea:hover,
 textarea:hover {
 	background-color: var(--fillhover);
-}
-
-label > input,
-label > select {
-	display: block;
 }
 
 textarea {
@@ -272,12 +273,14 @@ button:active,
 
 input[type="range"] {
 	height: 5px;
+	width: 200px;
+	max-width: 100%;
 	-webkit-appearance: none;
 	padding: 0;
 	background: var(--midi);
 	box-shadow: none;
-	transition: background 0.25s ease, border-radius 0.25s ease,
-		margin 0.2s ease;
+	margin: calc(var(--mainpaddng) + 10px) 0;
+	transition: background 0.25s ease;
 }
 input[type="range"]:active {
 	background: var(--hight);
@@ -370,6 +373,13 @@ input[type="color"]::-webkit-color-swatch-wrapper {
 input[type="color"]::-webkit-color-swatch {
 	border: none;
 	border-radius: 100%;
+}
+
+label > input,
+label > input[type="range"],
+label > input[type="color"],
+label > select {
+	display: block;
 }
 
 input:disabled,

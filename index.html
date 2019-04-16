@@ -317,19 +317,33 @@
 		<h2>Lorem ipsum dolor sit amet.</h2>
 		<label>
 			Normal text
-			<input type="text" />
+			<input type="text" id="a" />
 		</label>
-		<label>
-			Inpit number <input type="number" / value="1">
-		</label>
+		<label> Inpit number <input type="number" /> </label>
 		Date:
 		<p>
 			<input type="date" />
 			<input type="time" />
 		</p>
 
+		<form oninput="x.value=parseInt(range.value)">
+			<p>
+				Inpit range:
+				<input
+					id="range"
+					type="range"
+					value="50"
+					min="0"
+					max="100"
+					step="1"
+					style="width: 300px"
+				/>
+				<output name="x" for="range"></output>
+			</p>
+		</form>
+
 		<p>
-			Color Input: 
+			Color Input:
 			<input type="color" value="#b40d0d" />
 		</p>
 		<label>
