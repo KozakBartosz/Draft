@@ -448,13 +448,17 @@ input[type="checkbox"]:checked {
 
 input[type="file"] {
 	text-align: center;
-	max-width: 270px;
+	max-width: 280px;
 	position: relative;
 	overflow: hidden;
-	padding: var(--mainpaddng) 0;
-	text-indent: -400px;
+	padding: var(--mainpaddng) 5px;
+	/* font-size: 12px; */
+	/* text-indent: -130px; */
 }
-
+input[type="file"]:before {
+	content: "";
+	margin-left: -200px;
+}
 input[type="file"]:after {
 	content: "";
 	position: absolute;
