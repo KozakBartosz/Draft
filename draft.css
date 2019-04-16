@@ -183,10 +183,6 @@ input[type="number"] {
 	max-width: calc(var(--mainpaddng) * 5);
 }
 
-input[type="range"] {
-	height: 5px;
-	padding: 0;
-}
 select:not([multiple]) {
 	padding-right: calc(var(--mainpaddng) * 3);
 	background: var(--low)
@@ -272,6 +268,90 @@ button:active,
 		0 0px 0 0 var(--button), 0 0 10px 30px rgba(0, 0, 0, 0.32) inset,
 		0 2px 0px 0 rgba(0, 0, 0, 0.3) inset,
 		0 1px 5px -2px rgba(0, 0, 0, 0.3) inset;
+}
+
+input[type="range"] {
+	height: 5px;
+	-webkit-appearance: none;
+	padding: 0;
+	background: var(--midi);
+	box-shadow: none;
+	transition: background 0.25s ease, border-radius 0.25s ease,
+		margin 0.2s ease;
+}
+input[type="range"]:active {
+	background: var(--hight);
+}
+input[type="range"]::-webkit-slider-runnable-track,
+input[type="range"]::-webkit-range-track,
+input[type="range"]::-moz-range-track {
+	-webkit-appearance: none;
+	border-radius: 2px;
+	height: 2px;
+	background: var(--midi);
+}
+input[type="range"]::-webkit-slider-thumb {
+	background: var(--hight);
+	-webkit-appearance: none;
+	margin-top: 0px;
+	height: var(--mainpaddng);
+	cursor: pointer;
+	border-radius: 100%;
+	width: var(--mainpaddng);
+	transform: rotate(-45deg) scale(1.5);
+	transition: background 0.25s ease, border-radius 0.25s ease,
+		margin 0.2s ease;
+}
+input[type="range"]:focus::-webkit-slider-thumb {
+	background: var(--brand);
+}
+input[type="range"]:active::-webkit-slider-thumb {
+	background: var(--brand);
+	border-radius: 100% 100% 100% 0;
+	transform: rotate(-45deg) scale(2);
+	margin-top: calc(var(--mainpaddng) * -2);
+}
+input[type="range"]::-moz-slider-thumb {
+	background: var(--hight);
+	-webkit-appearance: none;
+	margin-top: 0px;
+	border: 2px solid var(--mainbg);
+	height: calc(var(--mainpaddng) * 1.5);
+	cursor: pointer;
+	width: calc(var(--mainpaddng) * 1.5);
+	border-radius: 100%;
+}
+
+input[type="range"]:focus::-webkit-slider-runnable-track {
+	background: tansparent;
+}
+
+input[type="range"]::-ms-track {
+	border-radius: 2px;
+	height: 3px;
+	background: var(--low);
+	cursor: pointer;
+	background: transparent;
+	border-color: transparent;
+	border-width: 16px 0;
+	color: transparent;
+}
+
+input[type="range"]::-ms-thumb {
+	background: var(--hight);
+	-webkit-appearance: none;
+	margin-top: 0px;
+	border: 2px solid var(--mainbg);
+	height: calc(var(--mainpaddng) * 1.5);
+	cursor: pointer;
+	width: calc(var(--mainpaddng) * 1.5);
+	border-radius: 100%;
+}
+input[type="range"]:focus::-ms-fill-lower {
+	background: var(--brand);
+}
+input[type="range"]:focus::-ms-fill-upper {
+	background: var(--brand);
 }
 
 input:disabled,
