@@ -651,6 +651,7 @@ fieldset > legend {
 
 details {
 	padding: var(--mainpaddng);
+	margin: var(--mainpaddng) 0;
 	border-radius: var(--radius);
 	padding-bottom: calc(var(--mainpaddng) + var(--radius));
 	background: var(--low);
@@ -663,7 +664,7 @@ details:last-of-type {
 }
 
 details + details {
-	margin-top: calc(var(--radius) * -1);
+	margin-top: calc(var(--radius) * -3);
 	border-top: 1px solid var(--mainbg);
 	border-radius: 0 0 var(--radius) var(--radius);
 }
