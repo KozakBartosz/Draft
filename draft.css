@@ -163,6 +163,7 @@ button,
 	cursor: pointer;
 	display: inline-block;
 }
+a[role="button"] > strong,
 button > strong {
 	font-size: 1.4em;
 	padding: 0px calc(var(--mainpaddng));
@@ -224,6 +225,7 @@ button,
 [type="file"],
 [type="reset"],
 [type="button"] {
+	text-align: center;
 	box-shadow: 0 0px 0px 0px rgba(0, 0, 0, 0), 0 0px 5px -5px rgba(0, 0, 0, 0),
 		0 0 0 0 rgba(0, 0, 0, 0.2), 0 0px 0 0 var(--button),
 		0 0 0 80px rgba(0, 0, 0, 0.2) inset;
@@ -559,6 +561,12 @@ mark {
 		0px 1px 1px var(--mainbg); */
 	color: var(--textContrast);
 	/* border-radius: var(--radius); */
+}
+
+abbr {
+	color: var(--textContrast);
+	text-decoration-style: wavy;
+	text-decoration-color: var(--hight);
 }
 
 ul,
