@@ -10,6 +10,27 @@
 		<style id="styleToRepacePlace"></style>
 	</head>
 	<body style="--sticky: calc(var(--mainpaddng) * 2 + 52px);">
+		<script>
+			function copy(target) {
+				var copyText = document.getElementById(target);
+				var text = copyText.innerText;
+
+				var input = document.createElement("input");
+				input.setAttribute("type", "text");
+				input.value = text;
+				copyText.appendChild(input);
+				input.select();
+				document.execCommand("copy");
+				input.remove();
+				copyText.setAttribute(
+					"style",
+					"background: var(--midi); color: var(--text)"
+				);
+				setTimeout(function() {
+					copyText.setAttribute("style", "");
+				}, 300);
+			}
+		</script>
 		<header
 			style="display: flex; justify-content: space-between; align-items: center; white-space: nowrap;"
 		>
@@ -54,7 +75,10 @@
 			<mark>head</mark> section:
 		</p>
 
-		<pre><code>&lt;link rel="stylesheet" href="http://test.kozakbartosz.pl/draft/def.css" /&gt;</code></pre>
+		<pre><button onClick="copy('code1')">copy</button><code id="code1">&lt;link rel="stylesheet" href="http://test.kozakbartosz.pl/draft/def.css" /&gt;</code></pre>
+
+		or in your style:
+		<pre><button onClick="copy('code2')">copy</button><code id="code2">@import url("https://kozakbartosz.github.io/Draft/draft.css");</code></pre>
 
 		<hr />
 
@@ -181,6 +205,7 @@
 			<details>
 				<summary>input type="search"</summary>
 				<input type="search" />
+				<input type="submit" value="" />
 			</details>
 
 			<details>
@@ -287,6 +312,12 @@
 			<input type="file" multiple />
 		</label>
 
+		<label for="search">
+			Search input
+		</label>
+		<input type="search" id="search" />
+		<button></button>
+
 		<textarea
 			name="about"
 			id="about"
@@ -331,7 +362,7 @@
 		</p>
 
 		<form oninput="x.value=parseInt(range.value)">
-			<p>
+			<lable>
 				Inpit range:
 				<input
 					id="range"
@@ -343,7 +374,7 @@
 					style="width: 300px"
 				/>
 				<output name="x" for="range"></output>
-			</p>
+			</lable>
 		</form>
 
 		<p>
@@ -485,11 +516,11 @@
 			<legend>Szukaj</legend>
 			<form action="produkty,szukaj" method="get">
 				<input
-					type="text"
+					type="search"
 					name="q"
 					placeholder="Wpisz czego szukasz..."
 				/>
-				<button>Szukaj</button>
+				<button></button>
 			</form>
 		</fieldset>
 
@@ -616,7 +647,7 @@
 					--radius: 7px;
 
 					--low: #161f27;
-					--like: #2b3c4b;
+					--like: #23303c;
 					--midi: #324759;
 					--hight: #0b7392;
 
@@ -641,7 +672,7 @@
 					--radius: 11px;
 
 					--low: #161f27;
-					--like: #2b3c4b;
+					--like: #23303c;
 					--midi: #324759;
 					--hight: #0b7392;
 
@@ -653,7 +684,7 @@
 					--button: #2b3c4a;
 					--buttontext: #fff;
 
-					--fillhover: #1b2731;
+					--fillhover: #19242d;
 
 					--sticky: 0px;
 				}`,
@@ -834,6 +865,7 @@
 				// console.log(e);
 				setTheme(e.target.value);
 			});
+
 			// document.location.hash
 		</script>
 	</body>
