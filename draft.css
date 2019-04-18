@@ -958,8 +958,61 @@ nav ~ header {
 }
 
 @media only screen and (max-width: 1100px) {
+	body {
+		-ms-scroll-snap-type: mandatory;
+		scroll-snap-type: mandatory;
+		-ms-scroll-snap-points-y: repeat(200px);
+		scroll-snap-points-y: repeat(200px);
+		-ms-scroll-snap-type: x mandatory;
+		scroll-snap-type: x mandatory;
+	}
 	body > nav:first-child {
-		font-family: sans-serif;
+		/* position: static;
+		float: left; */
+	}
+	/* body > nav:first-child ~ main, */
+	body > nav:first-child ~ footer,
+	body > nav:first-child ~ nav,
+	body > nav:first-child ~ header {
+		/* body > nav:first-child ~ header ~ main  */
+		/* body > nav:first-child ~ header ~ footer { */
+		padding-left: 0;
+		margin-left: 0;
+	}
+	body:after {
+		content: "";
+		display: block;
+		position: fixed;
+		top: 0;
+		left: 0px;
+		scroll-snap-align: start;
+	}
+	body:before {
+		content: "";
+		display: block;
+		position: fixed;
+		top: 0;
+		left: 200px;
+		scroll-snap-align: start;
+	}
+	body > nav:first-child ~ footer,
+	body > nav:first-child ~ nav,
+	body > nav:first-child ~ header,
+	body > nav:first-child ~ main {
+		width: 100%;
+		margin-left: 200px;
+		position: relative;
+		background: var(--mainbg);
+		z-index: 100;
+	}
+	body > nav:first-child ~ nav,
+	body > nav:first-child ~ main {
+		scroll-snap-align: start;
+	}
+}
+
+/* @media only screen and (max-width: 1100px) {
+	body > nav:first-child {
 		-ms-scroll-snap-type: mandatory;
 		scroll-snap-type: mandatory;
 		-ms-scroll-snap-points-y: repeat(240px);
@@ -990,7 +1043,6 @@ nav ~ header {
 		box-shadow: -320px 0px 0 0 var(--low);
 	}
 	body > nav:first-child:before {
-		/* scroll-snap-align: start; */
 		content: "_";
 		color: var(--brand);
 		line-height: 8px;
@@ -1028,5 +1080,5 @@ nav ~ header {
 	body > nav:first-child ~ header ~ footer {
 		padding-left: 0;
 		margin-left: 0;
-	}
-}
+	} 
+}*/
