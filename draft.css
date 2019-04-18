@@ -997,7 +997,7 @@ nav ~ header {
 		width: 100%;
 		padding-right: 200px;
 		/* margin-left: 200px; */
-		scroll-snap-align: start;
+		/* scroll-snap-align: start; */
 		height: 10px;
 		/* left: 180px; */
 		background: var(--low);
@@ -1007,6 +1007,7 @@ nav ~ header {
 	main {
 		position: relative;
 		scroll-snap-align: start;
+		/* scroll-snap-align: center; */
 	}
 	main:before {
 		z-index: -1;
@@ -1014,7 +1015,7 @@ nav ~ header {
 		display: block;
 		position: absolute;
 		top: -50px;
-		left: 200px;
+		left: calc(200px - var(--mainpaddng));
 		right: calc(var(--mainpaddng) * -1);
 		scroll-snap-align: start;
 		bottom: 0;
