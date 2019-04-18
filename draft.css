@@ -218,7 +218,8 @@ textarea:hover {
 
 a[id]:empty {
 	position: relative;
-	top: -132px;
+	top: -122px;
+	left: calc(var(--mainpaddng) * -1);
 	display: inline-block;
 }
 a[id]:empty:after {
@@ -226,7 +227,8 @@ a[id]:empty:after {
 	font-weight: 500;
 	content: "#";
 	position: relative;
-	top: 130px;
+	top: 120px;
+	left: var(--mainpaddng);
 	padding-right: 2px;
 	color: var(hight);
 }
@@ -967,6 +969,10 @@ nav ~ header {
 		scroll-snap-type: x mandatory;
 	}
 	body > nav:first-child {
+		left: auto;
+		right: 0;
+		z-index: -5;
+		padding-top: 0;
 		/* position: static;
 		float: left; */
 	}
@@ -979,36 +985,62 @@ nav ~ header {
 		padding-left: 0;
 		margin-left: 0;
 	}
+	/* body {
+		direction: rtl;
+	}
+	body > * {
+		direction: ltr;
+	} */
 	body:after {
 		content: "";
 		display: block;
-		position: fixed;
-		top: 0;
-		left: 0px;
+		width: 100%;
+		padding-right: 200px;
+		/* margin-left: 200px; */
+		scroll-snap-align: start;
+		height: 10px;
+		/* left: 180px; */
+		background: var(--low);
+		/* scroll-snap-align: center; */
+		/* scroll-snap-align: start; */
+	}
+	main {
+		position: relative;
 		scroll-snap-align: start;
 	}
-	body:before {
+	main:before {
+		z-index: -1;
 		content: "";
 		display: block;
-		position: fixed;
-		top: 0;
+		position: absolute;
+		top: -50px;
 		left: 200px;
+		right: calc(var(--mainpaddng) * -1);
 		scroll-snap-align: start;
+		bottom: 0;
+		background: var(--mainbg);
 	}
 	body > nav:first-child ~ footer,
 	body > nav:first-child ~ nav,
 	body > nav:first-child ~ header,
 	body > nav:first-child ~ main {
+		margin-left: 0;
+		padding-left: 0;
 		width: 100%;
-		margin-left: 200px;
+		/*margin-right: 200px;
+		margin-left: 0;
+		padding-right: 200px;
 		position: relative;
-		background: var(--mainbg);
-		z-index: 100;
+		scroll-snap-align: start end; */
 	}
-	body > nav:first-child ~ nav,
+
 	body > nav:first-child ~ main {
-		scroll-snap-align: start;
+		/* scroll-snap-align: center; */
 	}
+
+	/* body > nav:first-child ~ nav,
+	body > nav:first-child ~ main {
+	} */
 }
 
 /* @media only screen and (max-width: 1100px) {
