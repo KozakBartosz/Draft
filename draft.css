@@ -1020,6 +1020,7 @@ nav ~ header {
 		scroll-snap-align: start;
 		bottom: 0;
 		background: var(--mainbg);
+		box-shadow: -100px 0 0 0 var(--mainbg);
 	}
 	body > nav:first-child ~ footer,
 	body > nav:first-child ~ nav,
