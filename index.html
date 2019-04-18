@@ -10,7 +10,6 @@
 		<style id="styleToRepacePlace"></style>
 	</head>
 	<body style="--sticky: calc(var(--mainpaddng) * 2 + 52px);">
-
 		<nav>
 			<ul>
 				<li><a href="#what">What is draft</a></li>
@@ -36,27 +35,26 @@
 		</nav>
 
 		<script>
-				function copy(target) {
-					var copyText = document.getElementById(target);
-					var text = copyText.innerText;
-	
-					var input = document.createElement("input");
-					input.setAttribute("type", "text");
-					input.value = text;
-					copyText.appendChild(input);
-					input.select();
-					document.execCommand("copy");
-					input.remove();
-					copyText.setAttribute(
-						"style",
-						"background: var(--midi); color: var(--text)"
-					);
-					setTimeout(function() {
-						copyText.setAttribute("style", "");
-					}, 300);
-				}
-			</script>
+			function copy(target) {
+				var copyText = document.getElementById(target);
+				var text = copyText.innerText;
 
+				var input = document.createElement("input");
+				input.setAttribute("type", "text");
+				input.value = text;
+				copyText.appendChild(input);
+				input.select();
+				document.execCommand("copy");
+				input.remove();
+				copyText.setAttribute(
+					"style",
+					"background: var(--midi); color: var(--text)"
+				);
+				setTimeout(function() {
+					copyText.setAttribute("style", "");
+				}, 300);
+			}
+		</script>
 
 		<header
 			style="display: flex; justify-content: space-between; align-items: center; white-space: nowrap;"
@@ -82,7 +80,7 @@
 			</select>
 		</header>
 
-		<nav>
+		<!-- <nav>
 			<ul>
 				<li><a href="#what">What is draft</a></li>
 				<li><a href="#idea">Idea</a></li>
@@ -126,7 +124,7 @@
 					</ul>
 				</li>
 			</ul>
-		</nav>
+		</nav> -->
 		<main>
 			<h1>
 				<a href="#what" id="what"></a>What is <mark>draft.css</mark>
