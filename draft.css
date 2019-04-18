@@ -1006,8 +1006,8 @@ nav ~ header {
 	}
 	main {
 		position: relative;
-		scroll-snap-align: start;
-		/* scroll-snap-align: center; */
+		/* scroll-snap-align: start; */
+		scroll-snap-align: center;
 	}
 	main:before {
 		z-index: -1;
