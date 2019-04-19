@@ -141,8 +141,16 @@ h3,
 h4,
 h5,
 h6 {
-	margin-top: calc(var(--mainpaddng) * 2);
-	margin-bottom: calc(var(--mainpaddng) / 2);
+	margin-top: 1em;
+	margin-bottom: 0.3em;
+}
+h1:first-child,
+h2:first-child,
+h3:first-child,
+h4:first-child,
+h5:first-child,
+h6:first-child {
+	margin-top: 0.3em;
 }
 h1,
 h2,
@@ -850,7 +858,7 @@ nav {
 	width: calc((100vw - 950px) / 2 - var(--mainpaddng) + 40px);
 	min-width: 200px;
 	top: 0px;
-	padding-top: 84px;
+	padding-top: calc(var(--mainpaddng) * 2);
 	/* top: 84px; */
 	bottom: 0;
 	background: var(--low);
@@ -893,16 +901,22 @@ nav a:focus {
 	text-decoration: none;
 	box-shadow: 3px 0 0 0 var(--brand) inset;
 }
-nav ~ main,
-nav ~ footer,
-nav ~ header {
+/* body > nav:first-child ~ main,
+body > nav:first-child ~ footer,
+body > nav:first-child ~ header {
 	padding-left: 0px;
 	margin-left: 150px;
+} */
+
+body > nav:first-child ~ main,
+body > nav:first-child ~ footer {
+	z-index: 1;
 }
 header ~ nav ~ main,
 header ~ nav ~ footer {
 	margin-left: 0;
 }
+
 header ~ nav,
 header nav {
 	z-index: 10;
@@ -917,95 +931,112 @@ header nav {
 	overflow: visible;
 	padding: 0;
 	position: sticky;
-}
-header nav {
-	margin: 0 0 calc(var(--mainpaddng) * -1);
-}
-header ~ nav ul,
-header nav ul {
-	display: flex;
-}
-header ~ nav > ul li,
-header nav > ul li {
-	flex-grow: 1;
-	position: relative;
-}
-header ~ nav > ul > li > a,
-header nav > ul > li > a {
-	margin: 0;
-	padding: calc(var(--mainpaddng) / 2);
-	text-align: center;
-	box-shadow: 0 -3px 0 0 rgba(0, 0, 0, 0) inset;
-}
-header ~ nav > ul > li:hover > a,
-header ~ nav > ul > li > a:hover,
-header ~ nav > ul > li > a:focus,
-header nav > ul > li:hover > a,
-header nav > ul > li > a:hover,
-header nav > ul > li > a:focus {
-	box-shadow: 0 -3px 0 0 var(--brand) inset;
-}
-header ~ nav > ul > li ul,
-header nav > ul > li ul {
-	width: 220px;
-	min-width: 100%;
-	display: flex;
-	flex-direction: column;
-	position: absolute;
+	box-shadow: 0px 12px 15px -15px rgba(0, 0, 0, 0.35);
 	background: var(--mainbg);
-	margin-left: 0;
-	left: 0;
-	top: 100%;
-	z-index: 20;
-	visibility: hidden;
-	opacity: 0;
+}
 
-	box-shadow: 0 5px 20px -5px rgba(0, 0, 0, 0.35);
-	transform: skewY(10deg) translateY(20px);
-	transition: visibility 0.2s ease 0.2s, color 0.2s ease 0.2s,
-		opacity 0.2s ease 0.2s, transform 0.2s ease 0.2s;
+@media only screen and (max-width: 1000px) {
+	header ~ nav {
+		position: static !important;
+	}
 }
-header ~ nav li:hover > ul,
-header ~ nav > ul > li > a:focus + ul,
-header nav li:hover > ul,
-header nav > ul > li > a:focus + ul {
-	visibility: visible;
-	opacity: 1;
-	transform: skewY(0deg);
-	transition: visibility 0.2s ease, color 0.2s ease, opacity 0.2s ease,
-		transform 0.2s ease;
+@media only screen and (min-width: 1000px) {
+	header nav {
+		margin: 0 0 calc(var(--mainpaddng) * -1);
+	}
+
+	header ~ nav ul,
+	header nav ul {
+		display: flex;
+	}
+	header ~ nav > ul li,
+	header nav > ul li {
+		flex-grow: 1;
+		position: relative;
+	}
+	header ~ nav > ul > li > a,
+	header nav > ul > li > a {
+		margin: 0;
+		padding: calc(var(--mainpaddng) / 2);
+		text-align: center;
+		box-shadow: 0 -3px 0 0 rgba(0, 0, 0, 0) inset;
+	}
+	header ~ nav > ul > li:hover > a,
+	header ~ nav > ul > li > a:hover,
+	header ~ nav > ul > li > a:focus,
+	header nav > ul > li:hover > a,
+	header nav > ul > li > a:hover,
+	header nav > ul > li > a:focus {
+		box-shadow: 0 -3px 0 0 var(--brand) inset;
+	}
+	header ~ nav > ul > li ul,
+	header nav > ul > li ul {
+		width: 220px;
+		min-width: 100%;
+		display: flex;
+		flex-direction: column;
+		position: absolute;
+		background: var(--mainbg);
+		margin-left: 0;
+		left: 0;
+		top: 100%;
+		z-index: 20;
+		visibility: hidden;
+		opacity: 0;
+
+		box-shadow: 0 5px 20px -5px rgba(0, 0, 0, 0.35);
+		transform: skewY(10deg) translateY(20px);
+		transition: visibility 0.2s ease 0.2s, color 0.2s ease 0.2s,
+			opacity 0.2s ease 0.2s, transform 0.2s ease 0.2s;
+	}
+	header ~ nav li:hover > ul,
+	header ~ nav > ul > li > a:focus + ul,
+	header nav li:hover > ul,
+	header nav > ul > li > a:focus + ul {
+		visibility: visible;
+		opacity: 1;
+		transform: skewY(0deg);
+		transition: visibility 0.2s ease, color 0.2s ease, opacity 0.2s ease,
+			transform 0.2s ease;
+	}
+
+	header ~ nav > ul > li > ul > li ul,
+	header nav > ul > li > ul > li ul {
+		top: 0;
+		left: 100%;
+	}
+
+	header ~ nav > ul > li:last-child > ul,
+	header nav > ul > li:last-child > ul {
+		left: auto;
+		right: 0;
+	}
+	header ~ nav > ul > li:last-child > ul > li ul,
+	header nav > ul > li:last-child > ul > li ul,
+
+	/* W lewo dla wszystkich */
+	header ~ nav > ul > li > ul > li > ul > li > ul > li ul,
+	header nav > ul > li > ul > li > ul > li > ul > li ul,
+
+	/* w lewo dla koncowych */
+	header ~ nav > ul > li:nth-child(n + 3) > ul > li > ul > li ul,
+	header nav > ul > li:nth-child(n + 3) > ul > li > ul > li ul {
+		left: auto;
+		right: 100%;
+	}
 }
-main nav {
+
+main nav,
+aside {
+	clear: both;
+	width: 100%;
+	max-width: 280px;
 	position: relative;
 	float: right;
+	background: var(--low);
 	padding: var(--mainpaddng) calc(var(--mainpaddng) * 2);
 	margin: 0 0 var(--mainpaddng) var(--mainpaddng);
 	border-radius: var(--radius);
-}
-
-header ~ nav > ul > li > ul > li ul,
-header nav > ul > li > ul > li ul {
-	top: 0;
-	left: 100%;
-}
-
-header ~ nav > ul > li:last-child > ul,
-header nav > ul > li:last-child > ul {
-	left: auto;
-	right: 0;
-}
-header ~ nav > ul > li:last-child > ul > li ul,
-header nav > ul > li:last-child > ul > li ul,
-
-/* W lewo dla wszystkich */
-header ~ nav > ul > li > ul > li > ul > li > ul > li ul,
-header nav > ul > li > ul > li > ul > li > ul > li ul,
-
-/* w lewo dla koncowych */
-header ~ nav > ul > li:nth-child(n + 3) > ul > li > ul > li ul,
-header nav > ul > li:nth-child(n + 3) > ul > li > ul > li ul {
-	left: auto;
-	right: 100%;
 }
 
 nav ~ header ~ main,
@@ -1021,12 +1052,15 @@ nav header {
 	margin-left: 150px;
 }
 
-@media only screen and (max-width: 1100px) {
+@media only screen and (max-width: 1000px) {
+	header nav {
+		display: none;
+	}
 	body {
 		-ms-scroll-snap-type: mandatory;
 		scroll-snap-type: mandatory;
-		-ms-scroll-snap-points-y: repeat(200px);
-		scroll-snap-points-y: repeat(200px);
+		-ms-scroll-snap-points-y: repeat(calc(200px + var(--mainpaddng) * 4));
+		scroll-snap-points-y: repeat(calc(200px + var(--mainpaddng) * 4));
 		-ms-scroll-snap-type: x mandatory;
 		scroll-snap-type: x mandatory;
 	}
@@ -1053,15 +1087,15 @@ nav header {
 	body > * {
 		direction: ltr;
 	} */
-	body:after {
+	body > nav:first-child ~ main:after {
 		content: "";
 		display: block;
 		width: 100%;
-		padding-right: 200px;
+		padding-right: calc(200px + var(--mainpaddng) * 4);
 		/* margin-left: 200px; */
 		/* scroll-snap-align: start; */
 		height: 10px;
-		/* left: 180px; */
+		/* left: calc(200px + var(--mainpaddng) * 4); */
 		background: var(--low);
 		/* scroll-snap-align: center; */
 		/* scroll-snap-align: start; */
@@ -1077,7 +1111,7 @@ nav header {
 		display: block;
 		position: absolute;
 		top: -50px;
-		left: calc(200px - var(--mainpaddng));
+		left: calc(200px - var(--mainpaddng) * -2);
 		right: calc(var(--mainpaddng) * -1);
 		scroll-snap-align: start;
 		bottom: 0;
