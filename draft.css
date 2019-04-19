@@ -141,7 +141,8 @@ h3,
 h4,
 h5,
 h6 {
-	margin-bottom: 0px;
+	margin-top: calc(var(--mainpaddng) * 2);
+	margin-bottom: calc(var(--mainpaddng) / 2);
 }
 h1,
 h2,
@@ -345,8 +346,7 @@ input[type="range"] {
 	margin: calc(var(--mainpaddng) + 10px) 0;
 	transition: background 0.25s ease;
 }
-input[type="range"]:active,
-input[type="range"]:focus {
+input[type="range"]:active {
 	background: var(--hight);
 }
 input[type="range"]::-webkit-slider-runnable-track,
@@ -376,9 +376,7 @@ input[type="range"]:focus::-webkit-slider-thumb {
 }
 label:active input[type="range"]::-webkit-slider-thumb,
 input[type="range"]:active::-webkit-slider-thumb,
-input[type="range"]::-webkit-slider-thumb:active,
-input[type="range"]::-webkit-slider-thumb:focus,
-input[type="range"]:focus::-webkit-slider-thumb {
+input[type="range"]::-webkit-slider-thumb:active {
 	background: var(--brand);
 	border-radius: 100% 100% 100% 0;
 	transform: rotate(-45deg) scale(2);
@@ -693,7 +691,7 @@ details:last-of-type {
 }
 
 details + details {
-	margin-top: calc(var(--radius) * -3);
+	margin-top: calc(var(--radius) * -1 - var(--mainpaddng));
 	border-top: 1px solid var(--mainbg);
 	border-radius: 0 0 var(--radius) var(--radius);
 }
@@ -713,7 +711,7 @@ details > summary {
 	padding-left: calc(var(--mainpaddng) * 3);
 }
 
-details > summary::after {
+details > summary::before {
 	content: "";
 	position: absolute;
 	left: calc(var(--mainpaddng));
@@ -729,7 +727,7 @@ details > summary::after {
 	transform-origin: 70% 30%;
 }
 
-details[open] > summary::after {
+details[open] > summary::before {
 	transform: rotate(135deg);
 }
 
@@ -737,6 +735,13 @@ details[open] > summary {
 	color: var(--textContrast);
 	margin-bottom: var(--mainpaddng);
 	padding-bottom: 0;
+}
+
+details:after {
+	content: "";
+	width: 100%;
+	display: table;
+	height: 0;
 }
 
 details > summary::-webkit-details-marker {
@@ -838,6 +843,7 @@ footer:after {
 	height: calc(100% + var(--mainpaddng) * 2);
 }
 nav {
+	padding: calc(var(--mainpaddng) * 2);
 	position: fixed;
 	left: 0;
 	max-width: 280px;
@@ -858,8 +864,12 @@ nav li {
 }
 
 nav ul > li > ul {
-	padding-left: var(--mainpaddng);
+	/* margin-left: calc(var(--mainpaddng) / 1); */
 	margin-bottom: var(--mainpaddng);
+	box-shadow: 3px 0 0 0 var(--midi) inset;
+}
+nav ul > li > ul + li {
+	margin-top: var(--mainpaddng);
 }
 
 nav a {
@@ -869,6 +879,11 @@ nav a {
 	padding: calc(var(--mainpaddng) / 2) calc(var(--mainpaddng) * 2);
 	transition: background-color 0.2s ease, color 0.2s ease,
 		box-shadow 0.2s ease;
+}
+
+nav > a,
+nav > ul > li > a {
+	margin: 0 calc(var(--mainpaddng) * -2);
 }
 nav li:hover > a,
 nav a:hover,
@@ -888,73 +903,120 @@ header ~ nav ~ main,
 header ~ nav ~ footer {
 	margin-left: 0;
 }
-header ~ nav {
+header ~ nav,
+header nav {
 	z-index: 10;
-	padding-top: 0;
 	position: relative;
+	background: none;
 	width: 100%;
 	max-width: 100%;
 	margin-top: calc(var(--mainpaddng) * -1);
 	position: static;
+	clear: both;
 	top: 84px;
 	overflow: visible;
+	padding: 0;
 	position: sticky;
 }
-header ~ nav ul {
+header nav {
+	margin: 0 0 calc(var(--mainpaddng) * -1);
+}
+header ~ nav ul,
+header nav ul {
 	display: flex;
 }
-header ~ nav > ul li {
+header ~ nav > ul li,
+header nav > ul li {
 	flex-grow: 1;
 	position: relative;
 }
-header ~ nav > ul > li > a {
+header ~ nav > ul > li > a,
+header nav > ul > li > a {
+	margin: 0;
+	padding: calc(var(--mainpaddng) / 2);
 	text-align: center;
 	box-shadow: 0 -3px 0 0 rgba(0, 0, 0, 0) inset;
 }
 header ~ nav > ul > li:hover > a,
 header ~ nav > ul > li > a:hover,
-header ~ nav > ul > li > a:focus {
+header ~ nav > ul > li > a:focus,
+header nav > ul > li:hover > a,
+header nav > ul > li > a:hover,
+header nav > ul > li > a:focus {
 	box-shadow: 0 -3px 0 0 var(--brand) inset;
 }
-header ~ nav > ul > li ul {
-	width: 200px;
+header ~ nav > ul > li ul,
+header nav > ul > li ul {
+	width: 220px;
 	min-width: 100%;
 	display: flex;
 	flex-direction: column;
 	position: absolute;
-	background: var(--low);
-	padding-left: 0;
+	background: var(--mainbg);
+	margin-left: 0;
 	left: 0;
 	top: 100%;
+	z-index: 20;
 	visibility: hidden;
 	opacity: 0;
-	transition: visibility 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+
+	box-shadow: 0 5px 20px -5px rgba(0, 0, 0, 0.35);
+	transform: skewY(10deg) translateY(20px);
+	transition: visibility 0.2s ease 0.2s, color 0.2s ease 0.2s,
+		opacity 0.2s ease 0.2s, transform 0.2s ease 0.2s;
+}
+header ~ nav li:hover > ul,
+header ~ nav > ul > li > a:focus + ul,
+header nav li:hover > ul,
+header nav > ul > li > a:focus + ul {
+	visibility: visible;
+	opacity: 1;
+	transform: skewY(0deg);
+	transition: visibility 0.2s ease, color 0.2s ease, opacity 0.2s ease,
+		transform 0.2s ease;
+}
+main nav {
+	position: relative;
+	float: right;
+	padding: var(--mainpaddng) calc(var(--mainpaddng) * 2);
+	margin: 0 0 var(--mainpaddng) var(--mainpaddng);
+	border-radius: var(--radius);
 }
 
-header ~ nav > ul > li > ul > li ul {
+header ~ nav > ul > li > ul > li ul,
+header nav > ul > li > ul > li ul {
 	top: 0;
 	left: 100%;
 }
 
-header ~ nav > ul > li:last-child > ul {
+header ~ nav > ul > li:last-child > ul,
+header nav > ul > li:last-child > ul {
 	left: auto;
 	right: 0;
 }
-header ~ nav > ul > li:last-child > ul > li ul {
+header ~ nav > ul > li:last-child > ul > li ul,
+header nav > ul > li:last-child > ul > li ul,
+
+/* W lewo dla wszystkich */
+header ~ nav > ul > li > ul > li > ul > li > ul > li ul,
+header nav > ul > li > ul > li > ul > li > ul > li ul,
+
+/* w lewo dla koncowych */
+header ~ nav > ul > li:nth-child(n + 3) > ul > li > ul > li ul,
+header nav > ul > li:nth-child(n + 3) > ul > li > ul > li ul {
 	left: auto;
 	right: 100%;
-}
-
-header ~ nav li:hover > ul,
-header ~ nav > ul > li > a:focus + ul {
-	visibility: visible;
-	opacity: 1;
 }
 
 nav ~ header ~ main,
 nav ~ header ~ footer,
 nav ~ nav,
-nav ~ header {
+nav ~ header,
+nav header ~ main,
+nav header ~ footer,
+nav nav,
+nav header {
+	width: 90%;
 	padding-left: 0px;
 	margin-left: 150px;
 }
@@ -972,7 +1034,7 @@ nav ~ header {
 		left: auto;
 		right: 0;
 		z-index: -5;
-		padding-top: 0;
+		/* padding-top: 0; */
 		/* position: static;
 		float: left; */
 	}
