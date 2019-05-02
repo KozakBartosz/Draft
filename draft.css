@@ -1090,20 +1090,29 @@ nav header {
 	body > nav:first-child ~ main:after {
 		content: "";
 		display: block;
-		width: 100%;
-		padding-right: calc(200px + var(--mainpaddng) * 4);
+		width: calc(200px + var(--mainpaddng) * 4);
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: calc(var(--mainpaddng) * -2);
+		margin-left: 100vw;
+		/* left: calc(100% - (200px + var(--mainpaddng) * 2)); */
+		/* right: calc(-200px - var(--mainpaddng) * 2); */
 		/* margin-left: 200px; */
-		/* scroll-snap-align: start; */
-		height: 10px;
+		scroll-snap-align: end;
 		/* left: calc(200px + var(--mainpaddng) * 4); */
 		background: var(--low);
+		pointer-events: none;
 		/* scroll-snap-align: center; */
 		/* scroll-snap-align: start; */
+		/* scroll-snap-align: start; */
+		opacity: 0;
+		z-index: -1;
 	}
 	main {
 		position: relative;
-		/* scroll-snap-align: start; */
-		scroll-snap-align: center;
+		scroll-snap-align: end;
+		/* scroll-snap-align: center; */
 	}
 	main:before {
 		z-index: -1;
@@ -1111,12 +1120,19 @@ nav header {
 		display: block;
 		position: absolute;
 		top: -50px;
-		left: calc(200px - var(--mainpaddng) * -2);
+		/* left: 0; */
+		/* right: 0px; */
+		/* widows: ; */
+		left: calc(var(--mainpaddng) * -1);
 		right: calc(var(--mainpaddng) * -1);
-		scroll-snap-align: start;
-		bottom: 0;
+		/* width: calc(200px + var(--mainpaddng) * 4); */
+		/* max-width: 240px; */
+		/* right: calc(var(--mainpaddng) * -1); */
+		scroll-snap-align: start end;
+		bottom: -100px;
 		background: var(--mainbg);
-		box-shadow: -100px 0 0 0 var(--mainbg);
+		/* background: darkred; */
+		/* box-shadow: -100px 0 0 0 var(--mainbg); */
 	}
 	body > nav:first-child ~ footer,
 	body > nav:first-child ~ nav,
