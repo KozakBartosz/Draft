@@ -280,6 +280,7 @@ textarea:not([value=""]):invalid {
 
 input[type="search"] {
 	padding-right: calc(var(--radius) + var(--mainpaddng));
+	max-width: calc(100% + var(--mainpaddng) * -4 - 1px);
 }
 input[type="search"] + button:empty,
 input[type="search"] + input[value=""] {
@@ -677,6 +678,8 @@ hr {
 fieldset {
 	border: 3px solid var(--midi);
 	border-radius: var(--radius);
+	margin: 0;
+	min-width: auto;
 }
 fieldset > legend {
 	font-weight: 600;
@@ -1029,7 +1032,7 @@ header nav {
 main nav,
 aside {
 	clear: both;
-	width: 100%;
+	width: auto;
 	max-width: 280px;
 	position: relative;
 	float: right;
@@ -1037,6 +1040,15 @@ aside {
 	padding: var(--mainpaddng) calc(var(--mainpaddng) * 2);
 	margin: 0 0 var(--mainpaddng) var(--mainpaddng);
 	border-radius: var(--radius);
+}
+
+@media only screen and (max-width: 700px) {
+	main nav,
+	aside {
+		font: none;
+		max-width: none;
+		margin-left: 0;
+	}
 }
 
 nav ~ header ~ main,
