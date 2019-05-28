@@ -98,9 +98,8 @@ html {
 	scroll-behavior: smooth;
 }
 body {
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
-		"Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
-		"Helvetica Neue", sans-serif;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+		'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
 	line-height: 1.5em;
 	font-size: var(--font);
 	max-width: 950px;
@@ -128,8 +127,7 @@ th,
 td {
 	outline: none;
 	box-shadow: none;
-	transition: background-color 0.2s ease, box-shadow 0.2s ease,
-		transform 0.2s ease;
+	transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
 h1 {
 	font-size: 2.1em;
@@ -163,25 +161,26 @@ strong {
 	font-weight: 600;
 }
 button,
-[role="button"],
-[type="range"],
-[type="color"],
-[type="submit"],
-[type="file"],
-[type="reset"],
-[type="button"],
-[type="checkbox"],
-[type="radio"] {
+[role='button'],
+[type='range'],
+[type='color'],
+[type='submit'],
+[type='file'],
+[type='reset'],
+[type='button'],
+[type='checkbox'],
+[type='radio'] {
 	cursor: pointer;
 	display: inline-block;
 }
-a[role="button"] > strong,
+a[role='button'] > strong,
 button > strong {
 	font-size: 1.4em;
 	padding: 0px calc(var(--mainpaddng));
 	color: var(--buttontext);
 	display: block;
 }
+
 output {
 	display: inline-block;
 	padding: 0 var(--mainpaddng);
@@ -190,8 +189,8 @@ output {
 input,
 select,
 button,
-[role="button"],
-[type="button"],
+[role='button'],
+[type='button'],
 textarea {
 	-webkit-tap-highlight-color: transparent;
 	/* display: block; */
@@ -208,14 +207,14 @@ textarea {
 	vertical-align: middle;
 }
 
-input[type="number"] {
+input[type='number'] {
 	max-width: calc(var(--mainpaddng) * 5);
 }
 
 select:not([multiple]) {
 	padding-right: calc(var(--mainpaddng) * 3);
 	background: var(--low)
-		url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22%23e6e6e6%22%20d%3D%22m%2010.025%2C1.7575%20-6.67%2C0%203.335%2C3.475%20z%22%20%2F%3E%3C%2Fsvg%3E")
+		url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22%23e6e6e6%22%20d%3D%22m%2010.025%2C1.7575%20-6.67%2C0%203.335%2C3.475%20z%22%20%2F%3E%3C%2Fsvg%3E')
 		100% 50%/27px 7px no-repeat;
 }
 input:hover,
@@ -234,7 +233,7 @@ a[id]:empty {
 a[id]:empty:after {
 	display: inline-block;
 	font-weight: 500;
-	content: "#";
+	content: '#';
 	position: relative;
 	top: 120px;
 	left: var(--mainpaddng);
@@ -249,15 +248,14 @@ textarea {
 	resize: vertical;
 }
 button,
-[role="button"],
-[type="submit"],
-[type="file"],
-[type="reset"],
-[type="button"] {
+[role='button'],
+[type='submit'],
+[type='file'],
+[type='reset'],
+[type='button'] {
 	text-align: center;
 	box-shadow: 0 0px 0px 0px rgba(0, 0, 0, 0), 0 0px 5px -5px rgba(0, 0, 0, 0),
-		0 0 0 0 rgba(0, 0, 0, 0.2), 0 0px 0 0 var(--button),
-		0 0 0 80px rgba(0, 0, 0, 0.2) inset;
+		0 0 0 0 rgba(0, 0, 0, 0.2), 0 0px 0 0 var(--button), 0 0 0 80px rgba(0, 0, 0, 0.2) inset;
 	color: var(--buttontext);
 	background-color: var(--button);
 	padding: var(--mainpaddng) calc(var(--mainpaddng) * 2);
@@ -267,8 +265,8 @@ button,
 	color: transparent;
 } */
 button:empty,
-button[type="button"][value=""],
-button[type="submit"][value=""] {
+button[type='button'][value=''],
+button[type='submit'][value=''] {
 	min-height: calc(var(--mainpaddng) * 2 + 1em + 2px);
 }
 
@@ -278,12 +276,12 @@ textarea:not([value=""]):invalid {
 	box-shadow: 0 0 0 2px darkred;
 } */
 
-input[type="search"] {
+input[type='search'] {
 	padding-right: calc(var(--radius) + var(--mainpaddng));
 	max-width: calc(100% + var(--mainpaddng) * -4 - 1px);
 }
-input[type="search"] + button:empty,
-input[type="search"] + input[value=""] {
+input[type='search'] + button:empty,
+input[type='search'] + input[value=''] {
 	margin-left: calc(var(--radius) * -1 - 4px);
 	border-top-left-radius: 0;
 	border-bottom-left-radius: 0;
@@ -291,13 +289,14 @@ input[type="search"] + input[value=""] {
 		url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20129%20129%22%3E%3Cg%3E%3Cpath%20fill%3D%22%23e6e6e6%22%20d%3D%22M51.6%2C96.7c11%2C0%2C21-3.9%2C28.8-10.5l35%2C35c0.8%2C0.8%2C1.8%2C1.2%2C2.9%2C1.2s2.1-0.4%2C2.9-1.2c1.6-1.6%2C1.6-4.2%2C0-5.8l-35-35%20%20%20c6.5-7.8%2C10.5-17.9%2C10.5-28.8c0-24.9-20.2-45.1-45.1-45.1C26.8%2C6.5%2C6.5%2C26.8%2C6.5%2C51.6C6.5%2C76.5%2C26.8%2C96.7%2C51.6%2C96.7z%20M51.6%2C14.7%20%20%20c20.4%2C0%2C36.9%2C16.6%2C36.9%2C36.9C88.5%2C72%2C72%2C88.5%2C51.6%2C88.5c-20.4%2C0-36.9-16.6-36.9-36.9C14.7%2C31.3%2C31.3%2C14.7%2C51.6%2C14.7z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E)
 		50% 50%/40% auto no-repeat;
 }
-input[type="search"]:focus + button:empty,
-input[type="search"]:focus + input[value=""] {
+input[type='search']:focus + button:empty,
+input[type='search']:focus + input[value=''] {
 	box-shadow: 0 0 0 2px var(--hight);
 	transform: none;
 }
 
 input:focus,
+[role='button']:focus,
 select:focus,
 button:focus,
 textarea:focus {
@@ -306,45 +305,45 @@ textarea:focus {
 }
 
 button:focus,
-[role="button"]:focus,
-input[type="submit"]:focus,
-input[type="file"]:focus,
-input[type="reset"]:focus,
-input[type="button"]:focus {
+[role='button']:focus,
+input[type='submit']:focus,
+input[type='file']:focus,
+input[type='reset']:focus,
+input[type='button']:focus {
 	background-color: var(--button);
+	text-decoration: none;
+	color: var(--buttontext);
 }
 
 button:hover,
-[role="button"]:hover,
-input[type="submit"]:hover,
-input[type="file"]:hover,
-input[type="reset"]:hover,
-input[type="button"]:hover {
+[role='button']:hover,
+input[type='submit']:hover,
+input[type='file']:hover,
+input[type='reset']:hover,
+input[type='button']:hover {
 	text-decoration: none;
 	color: var(--buttontext);
 	background-color: var(--button);
-	box-shadow: 0 0px 0px 0px rgba(0, 0, 0, 0),
-		0 5px 20px -5px rgba(0, 0, 0, 0.35), 0 3px 0 0 rgba(0, 0, 0, 0.1),
-		0 3px 0 0 var(--button), 0 0 0 80px rgba(0, 0, 0, 0) inset;
+	box-shadow: 0 0px 0px 0px rgba(0, 0, 0, 0), 0 5px 20px -5px rgba(0, 0, 0, 0.35),
+		0 3px 0 0 rgba(0, 0, 0, 0.1), 0 3px 0 0 var(--button), 0 0 0 80px rgba(0, 0, 0, 0) inset;
 	transform: translateY(-3px);
 }
 button:active,
-[role="button"]:active,
-input[type="submit"]:active,
-input[type="file"]:active,
-input[type="reset"]:active,
-input[type="button"]:active {
+[role='button']:active,
+input[type='submit']:active,
+input[type='file']:active,
+input[type='reset']:active,
+input[type='button']:active {
 	transform: translateY(0px);
 	/* box-shadow: 0 5px 20px -5px rgba(0, 0, 0, 0.35);*/
 
-	box-shadow: 0 0px 0px 0px rgba(0, 0, 0, 0),
-		0 2px 20px -10px rgba(0, 0, 0, 0.25), 0 0px 0 0 rgba(0, 0, 0, 0.3),
-		0 0px 0 0 var(--button), 0 0 0px 80px rgba(0, 0, 0, 0.32) inset,
-		0 2px 0px 0 rgba(0, 0, 0, 0.3) inset,
+	box-shadow: 0 0px 0px 0px rgba(0, 0, 0, 0), 0 2px 20px -10px rgba(0, 0, 0, 0.25),
+		0 0px 0 0 rgba(0, 0, 0, 0.3), 0 0px 0 0 var(--button),
+		0 0 0px 80px rgba(0, 0, 0, 0.32) inset, 0 2px 0px 0 rgba(0, 0, 0, 0.3) inset,
 		0 1px 5px -2px rgba(0, 0, 0, 0.3) inset;
 }
 
-input[type="range"] {
+input[type='range'] {
 	height: 5px;
 	width: 200px;
 	max-width: 100%;
@@ -355,18 +354,18 @@ input[type="range"] {
 	margin: calc(var(--mainpaddng) + 10px) 0;
 	transition: background 0.25s ease;
 }
-input[type="range"]:active {
+input[type='range']:active {
 	background: var(--hight);
 }
-input[type="range"]::-webkit-slider-runnable-track,
-input[type="range"]::-webkit-range-track,
-input[type="range"]::-moz-range-track {
+input[type='range']::-webkit-slider-runnable-track,
+input[type='range']::-webkit-range-track,
+input[type='range']::-moz-range-track {
 	-webkit-appearance: none;
 	border-radius: 2px;
 	height: 2px;
 	background: var(--midi);
 }
-input[type="range"]::-webkit-slider-thumb {
+input[type='range']::-webkit-slider-thumb {
 	background: var(--hight);
 	-webkit-appearance: none;
 	margin-top: 0px;
@@ -377,21 +376,20 @@ input[type="range"]::-webkit-slider-thumb {
 	width: var(--mainpaddng);
 	transform: rotate(-45deg) scale(1.5);
 	box-shadow: 0px 2px 6px -1px rgba(0, 0, 0, 0.35);
-	transition: background 0.25s ease, border-radius 0.25s ease,
-		margin 0.2s ease;
+	transition: background 0.25s ease, border-radius 0.25s ease, margin 0.2s ease;
 }
-input[type="range"]:focus::-webkit-slider-thumb {
+input[type='range']:focus::-webkit-slider-thumb {
 	background: var(--brand);
 }
-label:active input[type="range"]::-webkit-slider-thumb,
-input[type="range"]:active::-webkit-slider-thumb,
-input[type="range"]::-webkit-slider-thumb:active {
+label:active input[type='range']::-webkit-slider-thumb,
+input[type='range']:active::-webkit-slider-thumb,
+input[type='range']::-webkit-slider-thumb:active {
 	background: var(--brand);
 	border-radius: 100% 100% 100% 0;
 	transform: rotate(-45deg) scale(2);
 	margin-top: calc(var(--mainpaddng) * -2);
 }
-input[type="range"]::-moz-slider-thumb {
+input[type='range']::-moz-slider-thumb {
 	background: var(--hight);
 	-webkit-appearance: none;
 	margin-top: 0px;
@@ -402,11 +400,11 @@ input[type="range"]::-moz-slider-thumb {
 	border-radius: 100%;
 }
 
-input[type="range"]:focus::-webkit-slider-runnable-track {
+input[type='range']:focus::-webkit-slider-runnable-track {
 	background: tansparent;
 }
 
-input[type="range"]::-ms-track {
+input[type='range']::-ms-track {
 	border-radius: 2px;
 	height: 3px;
 	background: var(--low);
@@ -417,7 +415,7 @@ input[type="range"]::-ms-track {
 	color: transparent;
 }
 
-input[type="range"]::-ms-thumb {
+input[type='range']::-ms-thumb {
 	background: var(--hight);
 	-webkit-appearance: none;
 	margin-top: 0px;
@@ -427,14 +425,14 @@ input[type="range"]::-ms-thumb {
 	width: calc(var(--mainpaddng) * 1.5);
 	border-radius: 100%;
 }
-input[type="range"]:focus::-ms-fill-lower {
+input[type='range']:focus::-ms-fill-lower {
 	background: var(--brand);
 }
-input[type="range"]:focus::-ms-fill-upper {
+input[type='range']:focus::-ms-fill-upper {
 	background: var(--brand);
 }
 
-input[type="color"] {
+input[type='color'] {
 	-webkit-appearance: none;
 	border: none;
 	overflow: hidden;
@@ -443,18 +441,18 @@ input[type="color"] {
 	width: calc(var(--mainpaddng) * 2);
 	height: calc(var(--mainpaddng) * 2);
 }
-input[type="color"]::-webkit-color-swatch-wrapper {
+input[type='color']::-webkit-color-swatch-wrapper {
 	padding: 0;
 	border-radius: 100%;
 }
-input[type="color"]::-webkit-color-swatch {
+input[type='color']::-webkit-color-swatch {
 	border: none;
 	border-radius: 100%;
 }
 
 label > input,
-label > input[type="range"],
-label > input[type="color"],
+label > input[type='range'],
+label > input[type='color'],
 label > select {
 	display: block;
 }
@@ -463,56 +461,50 @@ input:disabled,
 input[disabled],
 select[disabled],
 button[disabled],
-[role="button"][disabled] {
+[role='button'][disabled] {
 	cursor: not-allowed;
 	opacity: 0.5;
 	box-shadow: none;
 	transform: translateY(0px);
 }
 
-input[type="radio"],
-input[type="checkbox"] {
+input[type='radio'],
+input[type='checkbox'] {
 	margin-top: -2px;
-	transition: background-color 0.25s ease,
-		box-shadow 0.25s cubic-bezier(0.53, 1.59, 0.51, 1);
+	transition: background-color 0.25s ease, box-shadow 0.25s cubic-bezier(0.53, 1.59, 0.51, 1);
 }
-input[type="checkbox"] {
+input[type='checkbox'] {
 	background-color: var(--like);
 	width: calc(var(--mainpaddng) * 3);
-	box-shadow: calc(var(--mainpaddng) * -1) 0 0 calc(var(--mainpaddng) / 3)
-			var(--low) inset,
+	box-shadow: calc(var(--mainpaddng) * -1) 0 0 calc(var(--mainpaddng) / 3) var(--low) inset,
 		0 0 0 calc(var(--mainpaddng) / 3) var(--low) inset;
 }
-input[type="checkbox"]:hover,
-input[type="radio"]:hover {
+input[type='checkbox']:hover,
+input[type='radio']:hover {
 	background-color: var(--midi);
 }
-input[type="checkbox"]:focus {
-	box-shadow: calc(var(--mainpaddng) * -1) 0 0 calc(var(--mainpaddng) / 3)
-			var(--low) inset,
-		0 0 0 calc(var(--mainpaddng) / 3) var(--low) inset,
-		0 0 0 2px var(--hight);
+input[type='checkbox']:focus {
+	box-shadow: calc(var(--mainpaddng) * -1) 0 0 calc(var(--mainpaddng) / 3) var(--low) inset,
+		0 0 0 calc(var(--mainpaddng) / 3) var(--low) inset, 0 0 0 2px var(--hight);
 }
 
-input[type="radio"] {
+input[type='radio'] {
 	border-radius: 100%;
 	box-shadow: 0 0 0 calc(var(--mainpaddng) / 2) var(--low) inset;
 }
-input[type="checkbox"]:checked,
-input[type="radio"]:checked {
-	box-shadow: 0 0 0 calc(var(--mainpaddng) / 3) var(--low) inset,
-		0 0 0 2px var(--hight), 0 0 0 1px var(--low);
+input[type='checkbox']:checked,
+input[type='radio']:checked {
+	box-shadow: 0 0 0 calc(var(--mainpaddng) / 3) var(--low) inset, 0 0 0 2px var(--hight),
+		0 0 0 1px var(--low);
 	background-color: var(--brand);
 }
 
-input[type="checkbox"]:checked {
-	box-shadow: var(--mainpaddng) 0 0 calc(var(--mainpaddng) / 3) var(--low)
-			inset,
-		0 0 0 calc(var(--mainpaddng) / 3) var(--low) inset,
-		0 0 0 2px var(--hight);
+input[type='checkbox']:checked {
+	box-shadow: var(--mainpaddng) 0 0 calc(var(--mainpaddng) / 3) var(--low) inset,
+		0 0 0 calc(var(--mainpaddng) / 3) var(--low) inset, 0 0 0 2px var(--hight);
 }
 
-input[type="file"] {
+input[type='file'] {
 	text-align: center;
 	max-width: 280px;
 	position: relative;
@@ -521,12 +513,12 @@ input[type="file"] {
 	/* font-size: 12px; */
 	/* text-indent: -130px; */
 }
-input[type="file"]:before {
-	content: "";
+input[type='file']:before {
+	content: '';
 	margin-left: -200px;
 }
-input[type="file"]:after {
-	content: "";
+input[type='file']:after {
+	content: '';
 	position: absolute;
 	text-align: center;
 	top: 0;
@@ -580,8 +572,7 @@ a:focus {
 }
 
 mark {
-	background: linear-gradient(var(--hight), var(--hight)) 45% 92%/100% 35%
-		no-repeat;
+	background: linear-gradient(var(--hight), var(--hight)) 45% 92%/100% 35% no-repeat;
 	/* background: var(--midi); */
 	padding: 3px;
 	margin: -3px;
@@ -653,12 +644,25 @@ pre > code {
 }
 
 img {
+	margin: var(--mainpaddng) 0;
 	display: inline-block;
 	max-width: 100%;
 }
 
+svg {
+	display: inline-block;
+	vertical-align: middle;
+	line-height: 1em;
+	margin-top: -0.25em;
+}
+a[role='button'] svg,
+button svg {
+	margin-left: calc(var(--mainpaddng) / -2);
+	margin-right: calc(var(--mainpaddng) / -2);
+}
+
 img:before {
-	content: "The image could not be loaded. (url: " attr(src) ")";
+	content: 'The image could not be loaded. (url: ' attr(src) ')';
 	padding: calc(var(--mainpaddng) * 2) var(--mainpaddng);
 	color: var(--brand);
 	display: block;
@@ -723,7 +727,7 @@ details > summary {
 }
 
 details > summary::before {
-	content: "";
+	content: '';
 	position: absolute;
 	left: calc(var(--mainpaddng));
 	top: calc(var(--mainpaddng) - 10px + 0.55em);
@@ -749,7 +753,7 @@ details[open] > summary {
 }
 
 details:after {
-	content: "";
+	content: '';
 	width: 100%;
 	display: table;
 	height: 0;
@@ -844,7 +848,7 @@ footer {
 footer:after {
 	z-index: -1;
 	background: var(--low);
-	content: "";
+	content: '';
 	display: block;
 	position: absolute;
 	/* width: 100%; */
@@ -888,8 +892,7 @@ nav a {
 	color: var(--brand);
 	box-shadow: 3px 0 0 0 rgba(0, 0, 0, 0) inset;
 	padding: calc(var(--mainpaddng) / 2) calc(var(--mainpaddng) * 2);
-	transition: background-color 0.2s ease, color 0.2s ease,
-		box-shadow 0.2s ease;
+	transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
 }
 
 nav > a,
@@ -989,8 +992,8 @@ header nav {
 
 		box-shadow: 0 5px 20px -5px rgba(0, 0, 0, 0.35);
 		transform: skewY(10deg) translateY(20px);
-		transition: visibility 0.2s ease 0.2s, color 0.2s ease 0.2s,
-			opacity 0.2s ease 0.2s, transform 0.2s ease 0.2s;
+		transition: visibility 0.2s ease 0.2s, color 0.2s ease 0.2s, opacity 0.2s ease 0.2s,
+			transform 0.2s ease 0.2s;
 	}
 	header ~ nav li:hover > ul,
 	header ~ nav > ul > li > a:focus + ul,
@@ -999,8 +1002,7 @@ header nav {
 		visibility: visible;
 		opacity: 1;
 		transform: skewY(0deg);
-		transition: visibility 0.2s ease, color 0.2s ease, opacity 0.2s ease,
-			transform 0.2s ease;
+		transition: visibility 0.2s ease, color 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
 	}
 
 	header ~ nav > ul > li > ul > li ul,
@@ -1100,7 +1102,7 @@ nav header {
 		direction: ltr;
 	} */
 	body > nav:first-child ~ main:after {
-		content: "";
+		content: '';
 		display: block;
 		width: calc(200px + var(--mainpaddng) * 4);
 		position: absolute;
@@ -1128,7 +1130,7 @@ nav header {
 	}
 	main:before {
 		z-index: -1;
-		content: "";
+		content: '';
 		display: block;
 		position: absolute;
 		top: -50px;
