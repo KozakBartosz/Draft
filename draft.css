@@ -546,6 +546,28 @@ select:-webkit-autofill:focus {
 	transition: background-color 5000s ease-in-out 0s;
 }
 
+meter {
+	border-radius: var(--radius);
+	overflow: hidden;
+	width: 270px;
+	height: var(--mainpaddng);
+	min-height: 5px;
+	box-shadow: 0 0 0 4px var(--low), 0 0 0 6px var(--midi);
+	margin: var(--mainpaddng) 0;
+}
+meter::-webkit-meter-bar {
+	background: var(--low);
+}
+meter::-webkit-meter-optimum-value {
+	background: var(--brand);
+}
+meter::-webkit-meter-even-less-good-value {
+	background: red;
+}
+meter::-webkit-meter-suboptimum-value {
+	background: orange;
+}
+
 ::placeholder {
 	color: #636363;
 }
