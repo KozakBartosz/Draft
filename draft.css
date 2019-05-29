@@ -546,7 +546,8 @@ select:-webkit-autofill:focus {
 	transition: background-color 5000s ease-in-out 0s;
 }
 
-meter {
+meter,
+progress {
 	border-radius: var(--radius);
 	overflow: hidden;
 	width: 270px;
@@ -554,19 +555,59 @@ meter {
 	min-height: 5px;
 	box-shadow: 0 0 0 4px var(--low), 0 0 0 6px var(--midi);
 	margin: var(--mainpaddng) 0;
+	position: relative;
+	border: none;
 }
+progress::-webkit-progress-bar,
 meter::-webkit-meter-bar {
 	background: var(--low);
 }
+progress::-moz-progress-bar,
+meter::-moz-meter-bar {
+	background: var(--low);
+}
+progress::-webkit-progress-value,
 meter::-webkit-meter-optimum-value {
 	background: var(--brand);
+	border-radius: var(--radius);
+	transition: all 1s ease;
 }
+
 meter::-webkit-meter-even-less-good-value {
 	background: red;
+	border-radius: var(--radius);
+	transition: all 1s ease;
 }
 meter::-webkit-meter-suboptimum-value {
 	background: orange;
+	border-radius: var(--radius);
+	transition: all 1s ease;
 }
+@keyframes progressValue {
+	from {
+		background-position: 0 0;
+		background-size: 500px 100%;
+	}
+	to {
+		background-position: 500px 0;
+		background-size: 500px 100%;
+	}
+}
+
+/* header > div {
+	background-image: linear-gradient(90deg, var(--hight) 0%, var(--brand) 90%, var(--hight) 100%);
+	background-size: 100% 100%;
+	animation: progressValue 1s infinite;
+} */
+
+progress::-webkit-progress-value {
+	background-image: linear-gradient(90deg, var(--hight) 0%, var(--brand) 90%, var(--hight) 100%);
+	background-size: 110% 100%;
+	background-position: 0 0;
+	animation: progressValue 1s infinite;
+	transition: all 1s ease;
+}
+
 
 ::placeholder {
 	color: #636363;
