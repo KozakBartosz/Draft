@@ -27,6 +27,7 @@
 						<li><a href="#text">Text</a></li>
 						<li><a href="#forms">Forms</a></li>
 						<li><a href="#buttons">Buttons</a></li>
+						<li><a href="#progress">Progress and meter</a></li>
 						<li><a href="#table">Table</a></li>
 						<li><a href="#checkbox">Checkbox</a></li>
 						<li><a href="#fieldset">Fieldset</a></li>
@@ -334,6 +335,7 @@
 
 			<h2><a href="#new" id="new"></a>New features</h2>
 			<ul>
+				<li>Progress and meter</li>
 				<li>Nav</li>
 				<li>Aside</li>
 				<li>Search input</li>
@@ -603,19 +605,26 @@
 			<h2><a href="#progress" id="progress"></a>Progress and meter</h2>
 
 			<h4>Progress</h4>
-			<progress></progress><br>
-			<progress value="0" max="100"></progress><br>
-			<progress value="80" max="100"></progress><br>
-			<progress value="10" max="100"></progress><br>
-			<progress value="100" max="100"></progress>
+			<progress max="100"></progress><br>
+			<progress value="0" name="random" max="100"></progress><br>
+			<script>
+				setInterval(()=>document.querySelector('[name="random"]').value = Math.random() * 100 ,2500)
+			</script>
+			<progress value="80" max="100" onClick="this.value = Math.random() * 100"></progress><br>
+			<progress value="10" max="100" onClick="this.value = Math.random() * 100"></progress><br>
+			<progress value="100" max="100" onClick="this.value = Math.random() * 100"></progress>
 			
 			<h4>Meter</h4>
-			<meter value="2" min="0" max="10">2 out of 10</meter><br />
-			<meter value="0.6">60%</meter><br />
-			<meter low=".25" optimum=".8" high=".75" value=".2"></meter><br />
-			<meter low=".25" optimum=".15" high=".75" value=".5"></meter><br />
-			<meter low=".25" optimum=".2" high=".75" value=".8"></meter>
+			<meter value="2" min="0" max="10" onClick="this.value = Math.random() * 10">2 out of 10</meter><br />
+			<meter value="0.6" onClick="this.value = Math.random()">60%</meter><br />
+			<meter low=".25" optimum=".8" high=".75" value=".2" onClick="this.value = Math.random()"></meter><br />
+			<meter low=".25" optimum=".15" high=".75" value=".5" onClick="this.value = Math.random()"></meter><br />
+			<meter low=".25" optimum=".2" high=".75" value=".8" name="randommeter"></meter>
 
+			<script>
+				setInterval(()=>document.querySelector('[name="random"]').value = Math.random() * 100 ,2000)
+				setInterval(()=>document.querySelector('[name="randommeter"]').value = Math.random() ,2000)
+			</script>
 
 			<h2><a href="#buttons" id="buttons"></a> Buttons</h2>
 			<button>Long type button</button>

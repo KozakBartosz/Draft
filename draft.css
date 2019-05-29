@@ -547,7 +547,7 @@ select:-webkit-autofill:focus {
 }
 
 meter,
-progress {
+progress { 
 	border-radius: var(--radius);
 	overflow: hidden;
 	width: 270px;
@@ -558,15 +558,20 @@ progress {
 	position: relative;
 	border: none;
 }
-progress::-webkit-progress-bar,
+progress { 
+	-webkit-appearance: none;
+	appearance: none;
+}
+
+progress[value]::-webkit-progress-bar,
 meter::-webkit-meter-bar {
 	background: var(--low);
 }
-progress::-moz-progress-bar,
+progress[value]::-moz-progress-bar,
 meter::-moz-meter-bar {
 	background: var(--low);
 }
-progress::-webkit-progress-value,
+progress[value]::-webkit-progress-value,
 meter::-webkit-meter-optimum-value {
 	background: var(--brand);
 	border-radius: var(--radius);
@@ -585,13 +590,25 @@ meter::-webkit-meter-suboptimum-value {
 }
 @keyframes progressValue {
 	from {
-		background-position: 0 0;
-		background-size: 500px 100%;
+		background-position: 100vw 0;
+		background-size: 100vw 100%;
 	}
 	to {
-		background-position: 500px 0;
-		background-size: 500px 100%;
+		background-position: 200vw 0;
+		background-size: 100vw 100%;
 	}
+}
+
+
+
+progress:not([value]) {
+	background-image: linear-gradient(90deg, var(--midi) 0%, var(--brand) 90%, var(--midi) 100%);
+	background-size: 100% 100%;
+	animation: progressValue 1.5s infinite;
+}
+progress:not([value])::-webkit-progress-bar,
+progress:not([value])::-webkit-progress-value {
+	background: transparent;
 }
 
 /* header > div {
@@ -600,13 +617,13 @@ meter::-webkit-meter-suboptimum-value {
 	animation: progressValue 1s infinite;
 } */
 
-progress::-webkit-progress-value {
+/* progress::-webkit-progress-value {
 	background-image: linear-gradient(90deg, var(--hight) 0%, var(--brand) 90%, var(--hight) 100%);
 	background-size: 110% 100%;
 	background-position: 0 0;
 	animation: progressValue 1s infinite;
 	transition: all 1s ease;
-}
+} */
 
 
 ::placeholder {
@@ -1110,7 +1127,7 @@ aside {
 @media only screen and (max-width: 700px) {
 	main nav,
 	aside {
-		font: none;
+		float: none;
 		max-width: none;
 		margin-left: 0;
 	}
