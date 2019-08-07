@@ -980,8 +980,85 @@ pre > code {
 
 img {
 	margin: var(--mainpaddng) 0;
-	display: inline-block;
+	display: block;
 	max-width: 100%;
+}
+
+figure {
+	display: inline-block;
+	vertical-align: top;
+	margin: var(--mainpaddng) 0;
+	padding: 0;
+	position: relative;
+	overflow: hidden;
+}
+figure img {
+	margin: 0;
+}
+figcaption {
+	display: block;
+	margin: 0;
+	padding: calc(var(--mainpaddng) / 2) 0;
+}
+
+figure img {
+	margin: 0;
+}
+
+@media only screen and (min-width: 950px) {
+	a figcaption {
+		z-index: 2;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		color: var(--low);
+		opacity: 0;
+		padding: calc(var(--mainpaddng) * 2);
+		transition: opacity 0.4s ease;
+		color: #fff;
+	}
+	a figure::after,
+	figure a::after {
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		padding-top: 100%;
+		width: 100%;
+		z-index: 1;
+		background: var(--brand);
+		opacity: 0;
+		transition: opacity 0.4s ease, transform 0.7s ease;
+		transform: translate(-50%, -50%) scale(0.2);
+		border-radius: 50%;
+	}
+	a[href*='.png'] figcaption:empty::before,
+	a[href*='.jpg'] figcaption:empty::before,
+	a[href*='.jpeg'] figcaption:empty::before,
+	a[href*='.gif'] figcaption:empty::before,
+	a[href*='.PNG'] figcaption:empty::before,
+	a[href*='.JPG'] figcaption:empty::before,
+	a[href*='.webp'] figcaption:empty::before {
+		content: '';
+		display: inline-block;
+		padding: calc(var(--mainpaddng) * 4);
+		background: url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20129%20129%22%3E%3Cg%3E%3Cpath%20fill%3D%22%23e6e6e6%22%20d%3D%22M51.6%2C96.7c11%2C0%2C21-3.9%2C28.8-10.5l35%2C35c0.8%2C0.8%2C1.8%2C1.2%2C2.9%2C1.2s2.1-0.4%2C2.9-1.2c1.6-1.6%2C1.6-4.2%2C0-5.8l-35-35%20%20%20c6.5-7.8%2C10.5-17.9%2C10.5-28.8c0-24.9-20.2-45.1-45.1-45.1C26.8%2C6.5%2C6.5%2C26.8%2C6.5%2C51.6C6.5%2C76.5%2C26.8%2C96.7%2C51.6%2C96.7z%20M51.6%2C14.7%20%20%20c20.4%2C0%2C36.9%2C16.6%2C36.9%2C36.9C88.5%2C72%2C72%2C88.5%2C51.6%2C88.5c-20.4%2C0-36.9-16.6-36.9-36.9C14.7%2C31.3%2C31.3%2C14.7%2C51.6%2C14.7z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E)
+			50% 50% / calc(var(--mainpaddng) * 2) auto no-repeat;
+	}
+	a:hover figcaption {
+		opacity: 1;
+	}
+	figure a:hover::after,
+	a:hover figure::after {
+		opacity: 0.7;
+		transform: translate(-50%, -50%) scale(3);
+	}
 }
 
 svg {

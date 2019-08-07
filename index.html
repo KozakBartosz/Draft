@@ -33,11 +33,11 @@
 					order: 2;
 				}
 			}
-
 		</style>
 	</head>
 	<body>
-		<nav style="
+		<nav
+			style="
 		--radius: 7px;
 		--font: 16px;
 	
@@ -55,15 +55,13 @@
 		--button: #334a5e;
 		--buttontext: #fff;
 	
-		--fillhover: #19242d;">
+		--fillhover: #19242d;"
+		>
+			<!-- <nav> -->
 
-
-		<!-- <nav> -->
-
-<!-- 			
+			<!-- 			
 				<input type="search" id="search" />
 				<button></button> -->
-			
 
 			<h2>Menu</h2>
 			<ul>
@@ -88,6 +86,7 @@
 						<li><a href="#progress">Progress and meter</a></li>
 						<li><a href="#table">Table</a></li>
 						<li><a href="#details">Details</a></li>
+						<li><a href="#figure">Figure</a></li>
 					</ul>
 				</li>
 				<li><a href="#super">Super features</a></li>
@@ -97,18 +96,20 @@
 
 		<header>
 			<h1>
-				<input type="checkbox" checked="checked" id="logo"/>
+				<input type="checkbox" checked="checked" id="logo" />
 				<span>Draft</span>
 				<span style="font-size: 13px; margin-left: -8px; margin-bottom: -2px;">.css</span>
-				<span style="font-size: 9px; position: relative; left:-27px; top: -12px; opacity: 0.3;">v1.1</span>
+				<span
+					style="font-size: 9px; position: relative; left:-27px; top: -12px; opacity: 0.3;"
+					>v1.1</span
+				>
 			</h1>
-			
-			
+
 			<!-- <div>
 				<input type="search" id="search" />
 				<button></button>
 			</div> -->
-			
+
 			<nav>
 				<ul>
 					<li><a href="./">Home</a></li>
@@ -117,7 +118,7 @@
 					<li><a href="mailto:kontant@kozakbartosz.pl">Contact</a></li>
 				</ul>
 			</nav>
-			
+
 			<select name="" id="changethema">
 				<option>Theme:</option>
 				<option value="0">Defult</option>
@@ -129,10 +130,8 @@
 				<option value="6">Blood</option>
 				<option value="7">Matrix</option>
 			</select>
-		
 		</header>
 		<main>
-
 			<h1><a href="#what" id="what"></a>What is <mark>draft.css</mark>?</h1>
 			<h3>
 				Simple CSS framework for your simple HTML
@@ -171,10 +170,6 @@
 				</a>
 			</p>
 
-
-
-
-
 			<h2><a href="#new" id="new"></a>New features</h2>
 			<ul>
 				<li>Progress and meter</li>
@@ -208,18 +203,6 @@
 							released in 2008.
 						</p>
 					</article>
-				</details>
-
-				<details>
-					<summary>Figure</summary>
-					<figure>
-						<img src="https://9px.pl/100x100" alt="Trulli" />
-						<figcaption>Fig.1 - Trulli, Puglia, Italy.</figcaption>
-					</figure>
-					<figure>
-						<img src="pic_trulli.jpg" alt="Trulli" />
-						<figcaption>Fig.1 - Trulli, Puglia, Italy.</figcaption>
-					</figure>
 				</details>
 				<details>
 					<summary>Section</summary>
@@ -262,8 +245,6 @@
 
 			<pre><code>&lt;label&gt;<br />&nbsp; &nbsp; Normal text: &lt;input type="text" placeholder="placeholder..." /&gt;<br />&lt;/label&gt;<br />&lt;label&gt;<br />&nbsp; &nbsp; Inpit number: &lt;input type="number" value="1"/&gt;<br />&lt;/label&gt;<br />Data:<br />&lt;p&gt;<br />&nbsp; &nbsp; &lt;input type="date" /&gt;<br />&nbsp; &nbsp; &lt;input type="time" /&gt;<br />&lt;/p&gt;<br />Commodi:<br />&lt;label&gt;<br />&nbsp; &nbsp; &lt;input type="checkbox" /&gt; facilis non?<br />&lt;/label&gt;</code></pre>
 
-
-
 			<h3>Result:</h3>
 			<label>
 				Normal text
@@ -283,8 +264,6 @@
 
 			<hr />
 
-
-
 			<h2><a href="#templates" id="templates"></a>Templates</h2>
 
 			<ol>
@@ -298,7 +277,6 @@
 					<a href="templates/3.html">Offer</a>
 				</li>
 			</ol>
-
 
 			<h2><a href="#text" id="text"></a> Text</h2>
 
@@ -373,6 +351,7 @@
 				<li>Quae, in praesentium.</li>
 				<li>Aut, facilis non?</li>
 			</ol>
+
 			<h2><a href="#forms" id="forms"></a>Forms</h2>
 
 			<label>
@@ -719,6 +698,65 @@
 					atque itaque autem ut architecto tempore consequatur.
 				</p>
 			</details>
+
+			<h2><a href="#figure" id="figure"></a>Figure</h2>
+			<h4>Figure normal</h4>
+			<figure>
+				<img src="https://9px.pl/920x400/444" alt="Trulli" />
+				<figcaption>Officia nulla expedita vero.</figcaption>
+			</figure>
+			<figure>
+				<img src="https://9px.pl/304x200/444" alt="Trulli" />
+				<figcaption>Officia nulla expedita vero.</figcaption>
+			</figure>
+			<figure>
+				<img src="https://9px.pl/304x200/444" alt="Trulli" />
+				<figcaption>Placeat tempora porro labore.</figcaption>
+			</figure>
+			<figure>
+				<img src="https://9px.pl/304x200/444" alt="Trulli" />
+				<figcaption>Placeat tempora porro labore.</figcaption>
+			</figure>
+
+			<h4>Figure with link</h4>
+			<figure>
+				<a href="">
+					<img src="https://9px.pl/304x200/444" alt="Trulli" />
+					<figcaption>Officia nulla expedita vero.</figcaption>
+				</a>
+			</figure>
+			<figure>
+				<a href="">
+					<img src="https://9px.pl/304x200/444" alt="Trulli" />
+					<figcaption>Placeat tempora porro labore.</figcaption>
+				</a>
+			</figure>
+			<figure>
+				<a href="">
+					<img src="https://9px.pl/304x200/444" alt="Trulli" />
+					<figcaption>Placeat tempora porro labore.</figcaption>
+				</a>
+			</figure>
+
+			<h4>Figure with link to img with empty figcaption</h4>
+			<a href="https://9px.pl/920x400/444.png">
+				<figure>
+					<img src="https://9px.pl/920x400/444.png" alt="Trulli" />
+					<figcaption></figcaption>
+				</figure>
+			</a>
+			<a href="https://9px.pl/350x300/444.png">
+				<figure>
+					<img src="https://9px.pl/350x300/444.png" alt="Trulli" />
+					<figcaption></figcaption>
+				</figure>
+			</a>
+
+			<h4>Img wrong src helper information</h4>
+			<figure>
+				<img src="wrong src.jpg" alt="Trulli" />
+				<figcaption>wrong src</figcaption>
+			</figure>
 
 			<h2><a href="#super" id="super"></a> Super features:</h2>
 			<h3>Change button color by html</h3>
