@@ -12,25 +12,83 @@
 		<meta name="theme-color" content="#232a31" />
 		<link rel="stylesheet" href="draft.css" />
 		<style id="styleToRepacePlace"></style>
+		<style>
+			body {
+				--sticky: calc(66px);
+			}
+
+			@media only screen and (max-width: 600px) {
+				#logo {
+					display: none;
+				}
+			}
+			@media only screen and (max-width: 460px) {
+				header h1 {
+					order: 1;
+				}
+				header nav {
+					order: 3;
+				}
+				header #changethema {
+					order: 2;
+				}
+			}
+
+		</style>
 	</head>
-	<body style="--sticky: calc(var(--mainpaddng) * 2 + 52px);">
+	<body>
+		<!-- <nav style="
+		--brand: #41adff;
+		--mainbg: #232a31;
+		--mainpaddng: 14px;
+		--radius: 7px;
+		--font: 16px;
+	
+		--low: #161f27;
+		--like: #23303c;
+		--midi: #324759;
+		--hight: #0b7392;
+	
+		--text: #dbdbdb;
+		--textContrast: #fff;
+	
+		--code: #ffbe85;
+	
+		/* --button: #2b3c4a; */
+		--button: #334a5e;
+		--buttontext: #fff;
+	
+		--fillhover: #19242d;"> -->
+
+
 		<nav>
+
+<!-- 			
+				<input type="search" id="search" />
+				<button></button> -->
+			
+
 			<h2>Menu</h2>
 			<ul>
 				<li><a href="#what">What is draft?</a></li>
-				<li><a href="#more">More information</a></li>
 				<li><a href="#new">New features</a></li>
 				<li><a href="#todo">To do</a></li>
 				<li>
 					<a href="#example">Examples</a>
 					<ul>
 						<li><a href="#text">Text</a></li>
-						<li><a href="#forms">Forms</a></li>
-						<li><a href="#buttons">Buttons</a></li>
+						<li>
+							<a href="#forms">Forms</a>
+							<ul>
+								<li><a href="#forms">Inputs</a></li>
+								<li><a href="#forms">textarea</a></li>
+								<li><a href="#buttons">Buttons</a></li>
+								<li><a href="#checkbox">Checkbox</a></li>
+								<li><a href="#fieldset">Fieldset</a></li>
+							</ul>
+						</li>
 						<li><a href="#progress">Progress and meter</a></li>
 						<li><a href="#table">Table</a></li>
-						<li><a href="#checkbox">Checkbox</a></li>
-						<li><a href="#fieldset">Fieldset</a></li>
 						<li><a href="#details">Details</a></li>
 					</ul>
 				</li>
@@ -39,284 +97,66 @@
 			</ul>
 		</nav>
 
-		<script>
-			function copy(target) {
-				var copyText = document.getElementById(target);
-				var text = copyText.innerText;
-
-				var input = document.createElement("input");
-				input.setAttribute("type", "text");
-				input.value = text;
-				copyText.appendChild(input);
-				input.select();
-				document.execCommand("copy");
-				input.remove();
-				copyText.setAttribute(
-					"style",
-					"background: var(--midi); color: var(--text)"
-				);
-				setTimeout(function() {
-					copyText.setAttribute("style", "");
-				}, 300);
-			}
-		</script>
-
 		<header>
-			<div
-				style="display: flex; justify-content: space-between; align-items: center; white-space: nowrap;"
-			>
-				<h1>
-					<input type="checkbox" checked="checked" />
-					<span>Draft</span>
-					<span
-						style="font-size: 13px; margin-left: -8px; margin-bottom: -2px;"
-						>.css</span
-					>
-				</h1>
-				<select name="" id="changethema">
-					<option>Theme:</option>
-					<option value="0">Defult</option>
-					<option value="1">DefultMini</option>
-					<option value="2">Light</option>
-					<option value="3">LightSquare</option>
-					<option value="4">GrayDark</option>
-					<option value="5">GrayLight</option>
-					<option value="6">Blood</option>
-					<option value="7">Matrix</option>
-				</select>
-			</div>
-
-			<!-- <nav>
-			<ul>
-				<li><a href="#what">What is draft</a></li>
-				<li>
-					<a href="#more">Navigation ></a>
-					<ul>
-						<li>
-							<a href="#new">Simple text ></a>
-							<ul>
-								<li><a href="#new">Simple text</a></li>
-								<li><a href="#todo">To do</a></li>
-								<li>
-									<a href="#super">Super features ></a>
-									<ul>
-										<li>
-											<a href="#new">Simple text</a>
-										</li>
-										<li><a href="#todo">To do</a></li>
-										<li>
-											<a href="#super"
-												>Super features ></a
-											>
-											<ul>
-												<li>
-													<a href="#new"
-														>Simple text</a
-													>
-												</li>
-												<li>
-													<a href="#todo">To do ></a>
-													<ul>
-														<li>
-															<a href="#new"
-																>Simple text</a
-															>
-														</li>
-														<li>
-															<a href="#todo"
-																>To do</a
-															>
-														</li>
-														<li>
-															<a href="#super"
-																>Super features
-																></a
-															>
-															<ul>
-																<li>
-																	<a
-																		href="#new"
-																		>New
-																		features</a
-																	>
-																</li>
-																<li>
-																	<a
-																		href="#todo"
-																		>To
-																		do</a
-																	>
-																</li>
-																<li>
-																	<a
-																		href="#super"
-																		>Super
-																		features</a
-																	>
-																</li>
-															</ul>
-														</li>
-													</ul>
-												</li>
-												<li>
-													<a href="#super"
-														>Super features</a
-													>
-												</li>
-											</ul>
-										</li>
-									</ul>
-								</li>
-							</ul>
-						</li>
-						<li><a href="#todo">To do</a></li>
-						<li><a href="#super">Super features</a></li>
-					</ul>
-				</li>
-				<li><a href="#idea">Idea</a></li>
-				<li><a href="#how">How use</a></li>
-				<li>
-					<a href="#more">Navigation ></a>
-					<ul>
-						<li>
-							<a href="#new">Simple text ></a>
-							<ul>
-								<li><a href="#new">Simple text</a></li>
-								<li><a href="#todo">To do</a></li>
-								<li>
-									<a href="#super">Super features ></a>
-									<ul>
-										<li>
-											<a href="#new">Simple text</a>
-										</li>
-										<li><a href="#todo">To do</a></li>
-										<li>
-											<a href="#super"
-												>Super features ></a
-											>
-											<ul>
-												<li>
-													<a href="#new"
-														>Simple text</a
-													>
-												</li>
-												<li>
-													<a href="#todo">To do ></a>
-													<ul>
-														<li>
-															<a href="#new"
-																>Simple text</a
-															>
-														</li>
-														<li>
-															<a href="#todo"
-																>To do</a
-															>
-														</li>
-														<li>
-															<a href="#super"
-																>Super features
-																></a
-															>
-															<ul>
-																<li>
-																	<a
-																		href="#new"
-																		>New
-																		features</a
-																	>
-																</li>
-																<li>
-																	<a
-																		href="#todo"
-																		>To
-																		do</a
-																	>
-																</li>
-																<li>
-																	<a
-																		href="#super"
-																		>Super
-																		features</a
-																	>
-																</li>
-															</ul>
-														</li>
-													</ul>
-												</li>
-												<li>
-													<a href="#super"
-														>Super features</a
-													>
-												</li>
-											</ul>
-										</li>
-									</ul>
-								</li>
-							</ul>
-						</li>
-						<li><a href="#todo">To do</a></li>
-						<li><a href="#super">Super features</a></li>
-					</ul>
-				</li>
-				<li>
-					<a href="#example">Examples</a>
-					<ul>
-						<li><a href="#forms">Forms</a></li>
-						<li><a href="#buttons">Buttons</a></li>
-					</ul>
-				</li>
-				<li><a href="#author">Author</a></li>
-				<li>
-					<a href="#author">hover</a>
-					<ul>
-						<li><a href="#forms">1 Forms</a></li>
-						<li><a href="#buttons">2 Buttons</a></li>
-						<li><a href="#forms">3 Forms</a></li>
-						<li>
-							<a href="#buttons">4 hover</a>
-							<ul>
-								<li><a href="#forms">1 Forms</a></li>
-								<li><a href="#buttons">2 Buttons</a></li>
-								<li><a href="#forms">3 Forms</a></li>
-								<li><a href="#buttons">4 Buttons</a></li>
-								<li></li>
-							</ul>
-						</li>
-						<li><a href="#forms">5 Forms</a></li>
-						<li><a href="#buttons">6 Buttons</a></li>
-						<li><a href="#forms">7 Forms</a></li>
-						<li><a href="#buttons">8 Buttons</a></li>
-					</ul>
-				</li>
-			</ul>
-		</nav> -->
+			<h1>
+				<input type="checkbox" checked="checked" id="logo"/>
+				<span>Draft</span>
+				<span style="font-size: 13px; margin-left: -8px; margin-bottom: -2px;">.css</span>
+				<span style="font-size: 9px; position: relative; left:-27px; top: -12px; opacity: 0.3;">v1.1</span>
+			</h1>
+			
+			
+			<!-- <div>
+				<input type="search" id="search" />
+				<button></button>
+			</div> -->
+			
+			<nav>
+				<ul>
+					<li><a href="./">Home</a></li>
+					<li><a href="#example">Desc</a></li>
+					<li><a href="https://github.com/KozakBartosz/Draft">Github</a></li>
+					<li><a href="mailto:kontant@kozakbartosz.pl">Contact</a></li>
+				</ul>
+			</nav>
+			
+			<select name="" id="changethema">
+				<option>Theme:</option>
+				<option value="0">Defult</option>
+				<option value="1">DefultMini</option>
+				<option value="2">Light</option>
+				<option value="3">LightSquare</option>
+				<option value="4">GrayDark</option>
+				<option value="5">GrayLight</option>
+				<option value="6">Blood</option>
+				<option value="7">Matrix</option>
+			</select>
+		
 		</header>
 		<main>
-			<h1>
-				<a href="#what" id="what"></a>What is <mark>draft.css</mark>?
-			</h1>
+
+			<h1><a href="#what" id="what"></a>What is <mark>draft.css</mark>?</h1>
 			<h3>
 				Simple CSS framework for your simple HTML
 			</h3>
 			<p>
-				Draft.css is targeted at quickly creating prototypes of forms
-				and simple templates. Designed to written html code looked
-				beautiful and did not require any class and non-standard
-				elements.
+				Draft.css is targeted at quickly creating prototypes of forms and simple templates.
+				Designed to written html code looked beautiful and did not require any class and
+				non-standard elements.
 			</p>
 
 			<h2>Idea</h2>
 			<p>
-				The idea behind <strong>Draft.css</strong> is to create the most
-				beautiful, useful and interesting styles without using
-				Javascript.
+				The idea behind <strong>Draft.css</strong> is to create the most beautiful, useful
+				and interesting styles without using Javascript.
 			</p>
 			<h2>How use?</h2>
 			<p>
 				All you have to do is add this code to the
 				<mark>head</mark> section:
 			</p>
+
+			<h2>Menu</h2>
 
 			<pre><button onClick="copy('code1')">copy</button><code id="code1">&lt;link rel="stylesheet" href="https://kozakbartosz.github.io/Draft/draft.css" /&gt;</code></pre>
 
@@ -332,6 +172,10 @@
 					<small>Draft.css</small>
 				</a>
 			</p>
+
+
+
+
 
 			<h2><a href="#new" id="new"></a>New features</h2>
 			<ul>
@@ -350,8 +194,7 @@
 				<details>
 					<summary>Details</summary>
 					<p>
-						Details requires a div to work correctly. (to big
-						padding in the last)
+						Details requires a div to work correctly. (to big padding in the last)
 					</p>
 				</details>
 			</div>
@@ -363,8 +206,8 @@
 					<article>
 						<h5>Google Chrome</h5>
 						<p>
-							Google Chrome is a free, open-source web browser
-							developed by Google, released in 2008.
+							Google Chrome is a free, open-source web browser developed by Google,
+							released in 2008.
 						</p>
 					</article>
 				</details>
@@ -384,25 +227,22 @@
 					<summary>Section</summary>
 					<section>
 						<h4>
-							Nemo perspiciatis, a officiis unde non dolorem rem
-							quibusdam.
+							Nemo perspiciatis, a officiis unde non dolorem rem quibusdam.
 						</h4>
 						<p>
-							Lorem ipsum dolor sit, amet consectetur adipisicing
-							elit. Minima quod consequuntur rem ullam eos
-							aspernatur, explicabo incidunt aliquam ipsam
-							quisquam quo ut nostrum quam fuga cupiditate officia
-							commodi tenetur est?
+							Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima quod
+							consequuntur rem ullam eos aspernatur, explicabo incidunt aliquam ipsam
+							quisquam quo ut nostrum quam fuga cupiditate officia commodi tenetur
+							est?
 						</p>
 					</section>
 					<section>
 						<h4>Rem quibusdam.</h4>
 						<p>
-							Lorem ipsum dolor sit, amet consectetur adipisicing
-							elit. Minima quod consequuntur rem ullam eos
-							aspernatur, explicabo incidunt aliquam ipsam
-							quisquam quo ut nostrum quam fuga cupiditate officia
-							commodi tenetur est?
+							Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima quod
+							consequuntur rem ullam eos aspernatur, explicabo incidunt aliquam ipsam
+							quisquam quo ut nostrum quam fuga cupiditate officia commodi tenetur
+							est?
 						</p>
 					</section>
 				</details>
@@ -423,6 +263,9 @@
 			<h3>Code:</h3>
 
 			<pre><code>&lt;label&gt;<br />&nbsp; &nbsp; Normal text: &lt;input type="text" placeholder="placeholder..." /&gt;<br />&lt;/label&gt;<br />&lt;label&gt;<br />&nbsp; &nbsp; Inpit number: &lt;input type="number" value="1"/&gt;<br />&lt;/label&gt;<br />Data:<br />&lt;p&gt;<br />&nbsp; &nbsp; &lt;input type="date" /&gt;<br />&nbsp; &nbsp; &lt;input type="time" /&gt;<br />&lt;/p&gt;<br />Commodi:<br />&lt;label&gt;<br />&nbsp; &nbsp; &lt;input type="checkbox" /&gt; facilis non?<br />&lt;/label&gt;</code></pre>
+
+
+
 			<h3>Result:</h3>
 			<label>
 				Normal text
@@ -447,39 +290,35 @@
 			<aside>
 				<h2>Aside</h2>
 				<p>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit.
-					Reiciendis dolorum incidunt alias magnam blanditiis maiores
-					nisi eligendi natus eveniet deserunt eos corporis delectus,
-					quaerat eius tempora eum dolore. Rerum, obcaecati.
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis dolorum
+					incidunt alias magnam blanditiis maiores nisi eligendi natus eveniet deserunt
+					eos corporis delectus, quaerat eius tempora eum dolore. Rerum, obcaecati.
 				</p>
 			</aside>
 			<p>
 				<strong>Lorem ipsum</strong> dolor sit,
-				<a href="">amet consectetur adipisicing</a> elit.
-				<i>Hic nobis</i> atque eligendi voluptatum doloribus rem
-				praesentium veniam quo delectus explicabo, architecto ipsam ipsa
-				unde vitae excepturi iusto nesciunt placeat ducimus.
+				<a href="">amet consectetur adipisicing</a> elit. <i>Hic nobis</i> atque eligendi
+				voluptatum doloribus rem praesentium veniam quo delectus explicabo, architecto ipsam
+				ipsa unde vitae excepturi iusto nesciunt placeat ducimus.
 			</p>
 			<p>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim
-				saepe quisquam delectus accusantium nam recusandae obcaecati
-				ullam, non neque <a href="">commodi modi tempore</a> magni
-				magnam. Tenetur officiis mollitia facere libero sint.
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim saepe quisquam
+				delectus accusantium nam recusandae obcaecati ullam, non neque
+				<a href="">commodi modi tempore</a> magni magnam. Tenetur officiis mollitia facere
+				libero sint.
 			</p>
 			<h4>Lorem ipsum dolor sit amet.</h4>
 			<p>
-				Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-				Possimus, vero quibusdam. Rerum libero nihil aspernatur, ipsam
-				vel voluptatem inventore quasi. Odit, sapiente? Delectus beatae
-				laudantium sapiente cupiditate et libero? Corrupti.
+				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus, vero quibusdam.
+				Rerum libero nihil aspernatur, ipsam vel voluptatem inventore quasi. Odit, sapiente?
+				Delectus beatae laudantium sapiente cupiditate et libero? Corrupti.
 			</p>
 			<h3>Cite and q</h3>
 			<cite>
 				<p>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam
-					modi est incidunt unde natus omnis illo perferendis facilis,
-					qui, optio, neque voluptatum! Ea cupiditate commodi ex
-					labore, dolores minima cum.
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam modi est incidunt
+					unde natus omnis illo perferendis facilis, qui, optio, neque voluptatum! Ea
+					cupiditate commodi ex labore, dolores minima cum.
 				</p>
 				<p>Adipisicing elit.</p>
 			</cite>
@@ -487,22 +326,18 @@
 			<p>
 				Lorem ipsum dolor sit
 				<mark
-					>amet consectetur, adipisicing elit. Ipsam, perferendis
-					soluta sit nam ea est hic. Amet ipsam ipsum, eaque non
-					voluptatibus quis tenetur recusandae maxime suscipit
-					laborum,</mark
+					>amet consectetur, adipisicing elit. Ipsam, perferendis soluta sit nam ea est
+					hic. Amet ipsam ipsum, eaque non voluptatibus quis tenetur recusandae maxime
+					suscipit laborum,</mark
 				>
 				sunt et!
 			</p>
 			<h3>Abbr</h3>
 			<p>
-				<abbr title="World Health Organization"
-					>Abbr is now very pretty
-				</abbr>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit.
-				Temporibus quae, facilis, est repellat mollitia aliquam fugiat
-				ut dolore maiores iste rem totam similique. Doloribus
-				consequatur animi beatae blanditiis nesciunt laboriosam.
+				<abbr title="World Health Organization">Abbr is now very pretty </abbr>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus quae, facilis,
+				est repellat mollitia aliquam fugiat ut dolore maiores iste rem totam similique.
+				Doloribus consequatur animi beatae blanditiis nesciunt laboriosam.
 			</p>
 
 			<h3>Code:</h3>
@@ -538,12 +373,7 @@
 			<input type="search" id="search" />
 			<button></button>
 
-			<textarea
-				name="about"
-				id="about"
-				placeholder="I am a textarea..."
-				rows="6"
-			></textarea>
+			<textarea name="about" id="about" placeholder="I am a textarea..." rows="6"></textarea>
 
 			<h3>Datalist</h3>
 			<form action="/action_page.php" method="get">
@@ -558,7 +388,6 @@
 
 				<input type="submit" />
 			</form>
-
 
 			<h2>Lorem ipsum dolor sit amet.</h2>
 			<label>
@@ -611,29 +440,55 @@
 				</select>
 			</label>
 
-
 			<h2><a href="#progress" id="progress"></a>Progress and meter</h2>
 
 			<h4>Progress</h4>
-			<progress max="100"></progress><br>
-			<progress value="0" name="random" max="100"></progress><br>
+			<progress max="100"></progress><br />
+			<progress value="0" name="random" max="100"></progress><br />
 			<script>
-				setInterval(()=>document.querySelector('[name="random"]').value = Math.random() * 100 ,2500)
+				setInterval(
+					() => (document.querySelector('[name="random"]').value = Math.random() * 100),
+					2500,
+				);
 			</script>
-			<progress value="80" max="100" onClick="this.value = Math.random() * 100"></progress><br>
-			<progress value="10" max="100" onClick="this.value = Math.random() * 100"></progress><br>
+			<progress value="80" max="100" onClick="this.value = Math.random() * 100"></progress
+			><br />
+			<progress value="10" max="100" onClick="this.value = Math.random() * 100"></progress
+			><br />
 			<progress value="100" max="100" onClick="this.value = Math.random() * 100"></progress>
-			
+
 			<h4>Meter</h4>
-			<meter value="2" min="0" max="10" onClick="this.value = Math.random() * 10">2 out of 10</meter><br />
+			<meter value="2" min="0" max="10" onClick="this.value = Math.random() * 10"
+				>2 out of 10</meter
+			><br />
 			<meter value="0.6" onClick="this.value = Math.random()">60%</meter><br />
-			<meter low=".25" optimum=".8" high=".75" value=".2" onClick="this.value = Math.random()"></meter><br />
-			<meter low=".25" optimum=".15" high=".75" value=".5" onClick="this.value = Math.random()"></meter><br />
+			<meter
+				low=".25"
+				optimum=".8"
+				high=".75"
+				value=".2"
+				onClick="this.value = Math.random()"
+			></meter
+			><br />
+			<meter
+				low=".25"
+				optimum=".15"
+				high=".75"
+				value=".5"
+				onClick="this.value = Math.random()"
+			></meter
+			><br />
 			<meter low=".25" optimum=".2" high=".75" value=".8" name="randommeter"></meter>
 
 			<script>
-				setInterval(()=>document.querySelector('[name="random"]').value = Math.random() * 100 ,2000)
-				setInterval(()=>document.querySelector('[name="randommeter"]').value = Math.random() ,2000)
+				setInterval(
+					() => (document.querySelector('[name="random"]').value = Math.random() * 100),
+					2000,
+				);
+				setInterval(
+					() => (document.querySelector('[name="randommeter"]').value = Math.random()),
+					2000,
+				);
 			</script>
 
 			<h2><a href="#buttons" id="buttons"></a> Buttons</h2>
@@ -646,7 +501,17 @@
 			<input type="button" value="Send" />
 			<div>
 				<a href="" role="button">
-					<svg role="img" fill="none" stroke-width="1.2" stroke="#fff" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-labelledby="chevronLeftIconTitle">
+					<svg
+						role="img"
+						fill="none"
+						stroke-width="1.2"
+						stroke="#fff"
+						xmlns="http://www.w3.org/2000/svg"
+						width="24"
+						height="24"
+						viewBox="0 0 24 24"
+						aria-labelledby="chevronLeftIconTitle"
+					>
 						<polyline points="14 18 8 12 14 6 14 6"></polyline>
 					</svg>
 					Prev
@@ -657,18 +522,44 @@
 				<a href="" role="button">4</a>
 
 				<a href="" role="button">
-					Next 
-					<svg role="img" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-						<polyline points="10 6 16 12 10 18 10 18" fill="none" stroke-width="1.2" stroke="#fff"></polyline>
-				  	</svg>
+					Next
+					<svg
+						role="img"
+						xmlns="http://www.w3.org/2000/svg"
+						width="24"
+						height="24"
+						viewBox="0 0 24 24"
+					>
+						<polyline
+							points="10 6 16 12 10 18 10 18"
+							fill="none"
+							stroke-width="1.2"
+							stroke="#fff"
+						></polyline>
+					</svg>
 				</a>
 
-
 				<a href="" role="button">
-					<svg role="img" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-					<polyline points="13 7 18 12 13 17 13 17" fill="none" stroke-width="1.2" stroke="#fff"></polyline>
-					<polyline points="7 7 12 12 7 17 7 17" fill="none" stroke-width="1.2" stroke="#fff"></polyline>
-				  </svg>
+					<svg
+						role="img"
+						xmlns="http://www.w3.org/2000/svg"
+						width="24"
+						height="24"
+						viewBox="0 0 24 24"
+					>
+						<polyline
+							points="13 7 18 12 13 17 13 17"
+							fill="none"
+							stroke-width="1.2"
+							stroke="#fff"
+						></polyline>
+						<polyline
+							points="7 7 12 12 7 17 7 17"
+							fill="none"
+							stroke-width="1.2"
+							stroke="#fff"
+						></polyline>
+					</svg>
 				</a>
 			</div>
 			<h3>Link button</h3>
@@ -701,10 +592,8 @@
 
 			<h2>Adv table</h2>
 			<p>
-				When we added the <code>&lt;thead&gt;</code> and
-				<code>&lt;tbody&gt;</code> table has
-				<code>table-layout: fixed</code> and
-				<code>position: sticky</code> for thead
+				When we added the <code>&lt;thead&gt;</code> and <code>&lt;tbody&gt;</code> table
+				has <code>table-layout: fixed</code> and <code>position: sticky</code> for thead
 			</p>
 
 			<table>
@@ -714,7 +603,7 @@
 						<th>Kod</th>
 						<th>Nazwa</th>
 						<th>Opis</th>
-						<th width="120px"></th>
+						<th width="200px"></th>
 					</tr>
 				</thead>
 				<tbody>
@@ -723,10 +612,9 @@
 						<td><code>EDG-651</code></td>
 						<td>Lorem ipsum dolor</td>
 						<td>
-							Lorem ipsum dolor sit amet, consectetur adipisicing
-							elitdolor sitamet
+							Lorem ipsum dolor sit amet, consectetur adipisicing elitdolor sitamet
 						</td>
-						<td width="120px" style="text-align: right;">
+						<td width="200px" style="text-align: right;">
 							<input type="checkbox" />
 						</td>
 					</tr>
@@ -735,10 +623,9 @@
 						<td><code>EDG-652</code></td>
 						<td>Lorem ipsum dolor</td>
 						<td>
-							Lorem ipsum dolor sit amet, consectetur adipisicing
-							elitdolor sitamet
+							Lorem ipsum dolor sit amet, consectetur adipisicing elitdolor sitamet
 						</td>
-						<td width="120px" style="text-align: right;">
+						<td width="200px" style="text-align: right;">
 							<input type="checkbox" />
 						</td>
 					</tr>
@@ -747,10 +634,9 @@
 						<td><code>EDX-652*</code></td>
 						<td>Lorem ipsum dolor</td>
 						<td>
-							Lorem ipsum dolor sit amet, consectetur adipisicing
-							elitdolor sitamet
+							Lorem ipsum dolor sit amet, consectetur adipisicing elitdolor sitamet
 						</td>
-						<td width="120px" style="text-align: right;">
+						<td width="200px" style="text-align: right;">
 							<input type="checkbox" />
 						</td>
 					</tr>
@@ -759,10 +645,9 @@
 						<td><code>EDD-655</code></td>
 						<td>Lorem ipsum dolor</td>
 						<td>
-							Lorem ipsum dolor sit amet, consectetur adipisicing
-							elitdolor sitamet
+							Lorem ipsum dolor sit amet, consectetur adipisicing elitdolor sitamet
 						</td>
-						<td width="120px" style="text-align: right;">
+						<td width="200px" style="text-align: right;">
 							<input type="checkbox" />
 						</td>
 					</tr>
@@ -770,7 +655,7 @@
 				<tfoot>
 					<tr>
 						<td colspan="4">Lorem ipsum doreta: <b>3</b></td>
-						<td width="120px"><button>Remove</button></td>
+						<td width="200px" style="text-align: right;"><button>Remove</button></td>
 					</tr>
 				</tfoot>
 			</table>
@@ -794,11 +679,7 @@
 			<fieldset class="search">
 				<legend>Szukaj</legend>
 				<form action="produkty,szukaj" method="get">
-					<input
-						type="search"
-						name="q"
-						placeholder="Wpisz czego szukasz..."
-					/>
+					<input type="search" name="q" placeholder="Wpisz czego szukasz..." />
 					<button></button>
 				</form>
 			</fieldset>
@@ -818,10 +699,9 @@
 			<details>
 				<summary>Jeszcze wiecej szczegółów</summary>
 				<p>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit.
-					Minima fugiat explicabo assumenda ducimus nobis aliquid
-					esse, ad ab sapiente officiis repellat et, nisi atque itaque
-					autem ut architecto tempore consequatur.
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima fugiat explicabo
+					assumenda ducimus nobis aliquid esse, ad ab sapiente officiis repellat et, nisi
+					atque itaque autem ut architecto tempore consequatur.
 				</p>
 			</details>
 
@@ -854,23 +734,36 @@
 				Draft hes 3 type on navigation
 			</p>
 			<p>
-				1. When nav is the first position in <code>body</code> we have
-				the left side fixed menu. (required main tag)
+				1. When nav is the first position in <code>body</code> we have the left side fixed
+				menu. (required main tag)
 			</p>
-			<p>
-				2. Nav embedded right behind lub w <code>header</code> is
-				horizontal menu
-			</p>
-			<p>
-				3. Nav in <code>main</code> is there is a small navigation in
-				the text.
-			</p>
+			<p>2. Nav embedded right behind lub w <code>header</code> is horizontal menu</p>
+			<p>3. Nav in <code>main</code> is there is a small navigation in the text.</p>
 		</main>
 
 		<footer id="author">
 			2019 © Draft.css by
 			<a href="https://kozakbartosz.pl">kozakbartosz.pl</a>
 		</footer>
+
+		<script>
+			function copy(target) {
+				var copyText = document.getElementById(target);
+				var text = copyText.innerText;
+
+				var input = document.createElement('input');
+				input.setAttribute('type', 'text');
+				input.value = text;
+				copyText.appendChild(input);
+				input.select();
+				document.execCommand('copy');
+				input.remove();
+				copyText.setAttribute('style', 'background: var(--midi); color: var(--text)');
+				setTimeout(function() {
+					copyText.setAttribute('style', '');
+				}, 300);
+			}
+		</script>
 
 		<script>
 			var themes = [
@@ -1061,45 +954,41 @@
 					--like: #2b4b2e;
 					--midi: #32593f;
 					--hight: #0f803a;
-				}`
+				}`,
 			];
 
-			var changethema = document.getElementById("changethema");
+			var changethema = document.getElementById('changethema');
 			var root = document.documentElement;
 
-			var styleToRepacePlace = document.getElementById(
-				"styleToRepacePlace"
-			);
+			var styleToRepacePlace = document.getElementById('styleToRepacePlace');
 
 			function getBgColor(style) {
-				var mainbg = style.split("--mainbg: ")[1];
+				var mainbg = style.split('--mainbg: ')[1];
 				if (mainbg) {
-					return mainbg.split(";")[0];
+					return mainbg.split(';')[0];
 				}
 			}
 
 			function setTheme(i) {
-				if (!i || i == null || i == "Set thema") {
-					document.location.hash = "";
+				if (!i || i == null || i == 'Set thema') {
+					document.location.hash = '';
 					i = 0;
 				} else {
-					document.location.hash = "theme-" + i;
+					document.location.hash = 'theme-' + i;
 				}
 				var theme = themes[i];
 				styleToRepacePlace.innerText = theme;
-				var metaThemeColor = document.querySelector(
-					"meta[name=theme-color]"
-				);
-				metaThemeColor.setAttribute("content", getBgColor(theme));
+				var metaThemeColor = document.querySelector('meta[name=theme-color]');
+				metaThemeColor.setAttribute('content', getBgColor(theme));
 			}
 
 			var hash = document.location.hash;
-			if (hash && hash.includes("theme-")) {
+			if (hash && hash.includes('theme-')) {
 				var value = hash.slice(7);
 				setTheme(value);
 				changethema.value = value;
 			}
-			changethema.addEventListener("change", e => {
+			changethema.addEventListener('change', e => {
 				// console.log(e);
 				setTheme(e.target.value);
 			});
