@@ -5,7 +5,7 @@
 	--mainbg: #232a31;
 	--mainpaddng: 14px;
 	--radius: 7px;
-	--font: 16px;
+	--font: 1.6rem;
 
 	/* --low: #1c262e; */
 	--low: #161f27;
@@ -151,6 +151,7 @@
 
 html {
 	scroll-behavior: smooth;
+	font-size: 10px;
 }
 body {
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
@@ -180,11 +181,6 @@ header {
 	margin: 0 calc(var(--mainpaddng) * -1);
 }
 
-header h1 {
-	/* margin-top: 1em; */
-	padding: calc(var(--mainpaddng) / 2) 0;
-}
-
 main::after,
 main::before {
 	content: '';
@@ -207,6 +203,7 @@ nav li {
 	margin: 0;
 	padding: 0;
 	list-style: none;
+	position: relative;
 }
 
 nav a {
@@ -216,7 +213,7 @@ nav a {
 	box-shadow: 3px 0 0 0 rgba(0, 0, 0, 0) inset;
 	padding: var(--mainpaddng);
 	margin: 0 calc(var(--mainpaddng) * -1);
-	transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+	transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 	/* font-weight: bold; */
 	position: relative;
 	height: 100%;
@@ -224,48 +221,10 @@ nav a {
 	align-items: center;
 }
 
-header nav,
-header nav > ul {
-	padding: 0;
-	display: flex;
-	align-self: stretch;
-	align-items: stretch;
-	/* justify-content: center; */
-
-	justify-content: space-evenly;
-	flex: 1;
-
-	flex-direction: row;
-	background: none;
-	margin-bottom: 0;
-}
-header nav a {
-	margin: 0;
-	border-left: none;
-	border-bottom: 2px solid transparent;
-	height: 100%;
-	display: flex;
-	justify-content: center;
-}
-
-nav a + a,
-nav li + li a {
-	border-top: 2px solid var(--fillhover);
-}
-header nav a + a,
-header nav li + li a {
-	border-top: none;
-}
-
 nav a:hover {
 	text-decoration: none;
 	background: var(--fillhover);
 	border-left: 2px solid var(--brand);
-}
-header nav a:hover {
-	margin: 0;
-	border-left: none;
-	border-bottom: 2px solid var(--brand);
 }
 
 nav ul li ul {
@@ -341,6 +300,102 @@ nav ul li ul li a:hover::before {
 	border: 2px solid var(--hight);
 }
 
+header div {
+	display: flex;
+	align-self: stretch;
+}
+
+header nav,
+header nav > ul {
+	padding: 0;
+	display: flex;
+	align-self: stretch;
+	align-items: stretch;
+	/* justify-content: center; */
+
+	justify-content: space-evenly;
+	flex: 1;
+
+	flex-direction: row;
+	background: none;
+	margin-bottom: 0;
+}
+header nav > a,
+header nav > ul > li > a {
+	margin: 0;
+	border-left: none;
+	border-bottom: 2px solid transparent;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+nav a + a,
+nav li + li a {
+	border-top: 2px solid var(--fillhover);
+}
+header nav a + a,
+header nav li + li a {
+	border-top: none;
+}
+
+header nav ul li ul {
+	padding: 0;
+	border-radius: var(--radius);
+	opacity: 0;
+	visibility: hidden;
+	position: absolute;
+	top: calc(100% + var(--mainpaddng) / 2);
+	left: 50%;
+	transform: translateX(-50%);
+	background: var(--low);
+	width: 220px;
+	max-width: none;
+	box-shadow: 0px 5px 30px -15px rgba(0, 0, 0, 0.35);
+}
+header nav ul li:hover > ul {
+	visibility: visible;
+	opacity: 1;
+}
+
+header nav ul li > ul::before {
+	content: '';
+	/* height: ; */
+	border-bottom: calc(var(--mainpaddng) * 2) solid transparent;
+	/* border-left: calc(var(--mainpaddng) * 2) solid transparent; */
+	width: 100%;
+	position: absolute;
+	left: 0;
+	bottom: 100%;
+}
+header nav ul li > ul::after {
+	border: calc(var(--mainpaddng) / 2) solid transparent;
+	border-bottom-color: var(--low);
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: auto;
+	bottom: 100%;
+	margin: auto;
+	width: 0;
+}
+
+header nav ul li > ul > li > a {
+	padding: var(--mainpaddng);
+	margin: 0;
+}
+header nav ul li > ul > li > a::after,
+header nav ul li > ul > li > a::before {
+	display: none;
+}
+
+header nav > a:hover,
+header nav > ul > li:hover > a {
+	margin: 0;
+	border-left: none;
+	border-bottom: 2px solid var(--brand);
+}
+
 nav,
 aside {
 	background: var(--low);
@@ -375,18 +430,16 @@ td {
 	box-shadow: none;
 	transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
-h1 {
-	font-size: 2.1em;
-	/* margin-top: 0; */
-}
+
 h1,
 h2,
-h3,
+h3 {
+	margin: calc(var(--mainpaddng) * 3) 0 calc(var(--mainpaddng) * 2);
+}
 h4,
 h5,
 h6 {
-	margin-top: 1em;
-	margin-bottom: 0.3em;
+	margin: calc(var(--mainpaddng) * 2) 0 var(--mainpaddng);
 }
 h1:first-child,
 h2:first-child,
@@ -394,7 +447,7 @@ h3:first-child,
 h4:first-child,
 h5:first-child,
 h6:first-child {
-	margin-top: 0.3em;
+	margin-top: calc(var(--mainpaddng) * 2);
 }
 h1,
 h2,
@@ -406,6 +459,28 @@ strong {
 	color: var(--textContrast);
 	font-weight: 600;
 }
+
+h1 {
+	font-size: 3.6rem;
+}
+
+h2 {
+	font-size: 2.8rem;
+}
+h3 {
+	font-size: 2.5rem;
+}
+h4 {
+	font-size: 2.5rem;
+	font-weight: normal;
+}
+h5 {
+	font-size: 2rem;
+}
+h6 {
+	font-size: 1.8rem;
+}
+
 button,
 [role='button'],
 [type='range'],
@@ -928,9 +1003,31 @@ ul,
 ol,
 label,
 code,
+dl,
 p {
 	max-width: 100%;
 	margin: var(--mainpaddng) 0;
+}
+
+dl {
+	display: flex;
+	flex-wrap: wrap;
+}
+dt {
+	color: var(--textContrast);
+	width: 130px;
+	display: block;
+	font-weight: bold;
+	margin: calc(var(--mainpaddng) / 2) 0;
+	padding: 0 var(--mainpaddng) 0 0;
+	text-align: right;
+}
+dd {
+	width: calc(100% - 130px);
+	display: block;
+	margin: calc(var(--mainpaddng) / 2) 0;
+	border-left: 3px solid var(--midi);
+	padding: 0 0 0 var(--mainpaddng);
 }
 
 code,

@@ -14,7 +14,7 @@
 		<style id="styleToRepacePlace"></style>
 		<style>
 			main {
-				--sticky: calc(66px);
+				--sticky: calc(90px);
 			}
 
 			@media only screen and (max-width: 600px) {
@@ -22,7 +22,7 @@
 					display: none;
 				}
 			}
-			@media only screen and (max-width: 460px) {
+			@media only screen and (max-width: 500px) {
 				header h1 {
 					order: 1;
 				}
@@ -36,7 +36,7 @@
 		</style>
 	</head>
 	<body>
-		<nav
+		<!-- <nav
 			style="
 		--radius: 7px;
 		--font: 16px;
@@ -56,8 +56,8 @@
 		--buttontext: #fff;
 	
 		--fillhover: #19242d;"
-		>
-			<!-- <nav> -->
+		> -->
+			<nav>
 
 			<!-- 			
 				<input type="search" id="search" />
@@ -116,7 +116,21 @@
 					<li><a href="./">Home</a></li>
 					<li><a href="#example">Desc</a></li>
 					<li><a href="https://github.com/KozakBartosz/Draft">Github</a></li>
-					<li><a href="mailto:kontant@kozakbartosz.pl">Contact</a></li>
+					<!-- <li><a href="mailto:kontant@kozakbartosz.pl">Contact</a></li> -->
+					<li>
+						<a href="mailto:kontant@kozakbartosz.pl">Contact</a>
+						<ul>
+							<li>
+								<a href="">kozakbartosz.pl</a>
+							</li>
+							<li>
+								<a href="">bartoszkozak94@gmail.com</a>
+							</li>
+							<li>
+								<a href="">(+48) 123 123 123</a>
+							</li>
+						</ul>
+					</li>
 				</ul>
 			</nav>
 
@@ -292,6 +306,12 @@
 				voluptatum doloribus rem praesentium veniam quo delectus explicabo, architecto ipsam
 				ipsa unde vitae excepturi iusto nesciunt placeat ducimus.
 			</p>
+			<h1>H1 header</h1>
+			<h2>H2 header</h2>
+			<h3>H3 header</h3>
+			<h4>H4 header</h4>
+			<h5>H5 header</h5>
+			<h6>H6 header</h6>
 			<p>
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim saepe quisquam
 				delectus accusantium nam recusandae obcaecati ullam, non neque
@@ -331,6 +351,19 @@
 				Doloribus consequatur animi beatae blanditiis nesciunt laboriosam.
 			</p>
 
+			<h3>dl, dd, dt</h3>
+			<dl>
+				<dt>Coffee</dt>
+				<dd>Black hot drink</dd>
+				<dt>Milk</dt>
+				<dd>White cold drink</dd>
+			</dl>
+			<dl>
+				<dt>Enim quis dolores cum</dt>
+				<dd>Enim quis dolores cum voluptates voluptas</dd>
+				<dt>Lorem ipsum</dt>
+				<dd>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius assumenda non eveniet, est natus iusto recusandae, ratione qui repudiandae error enim quis dolores cum voluptates voluptas corporis! Exercitationem, placeat soluta?</dd>
+			</dl>
 			<h3>Code:</h3>
 			<pre><code>// This logs a message to the console<br />console.log('Hello,world!')</code></pre>
 
@@ -778,6 +811,7 @@
 			<h3>Header</h3>
 			<p>
 				header tags i sticky with shadow.
+				When Header is after the content is sticky to bottom like in mobile apps <a href="templates/2.html">example</a>.
 			</p>
 
 			<h3>Nav</h3>
