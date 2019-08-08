@@ -7,6 +7,7 @@
 	--radius: 7px;
 	--font: 16px;
 
+	/* --low: #1c262e; */
 	--low: #161f27;
 	--like: #23303c;
 	--midi: #324759;
@@ -928,6 +929,7 @@ ol,
 label,
 code,
 p {
+	max-width: 100%;
 	margin: var(--mainpaddng) 0;
 }
 
@@ -1103,6 +1105,14 @@ fieldset > legend {
 	padding: calc(var(--mainpaddng) / 2) calc(var(--mainpaddng));
 }
 
+[role='alert'] {
+	border-radius: var(--radius) var(--radius) 0 0;
+	border-bottom: 3px solid red;
+	background: rgba(200, 0, 0, 0.1);
+	padding: var(--mainpaddng);
+	margin: var(--mainpaddng) 0;
+}
+
 details {
 	padding: var(--mainpaddng);
 	margin: var(--mainpaddng) 0;
@@ -1216,8 +1226,11 @@ thead {
 	top: 0;
 	bottom: 0;
 	top: var(--sticky);
-	z-index: 5;
+	z-index: 10;
 	box-shadow: 0px 5px 30px -15px rgba(0, 0, 0, 0.35);
+}
+thead {
+	z-index: 5;
 }
 
 @media only screen and (min-height: 500px) {
@@ -1258,6 +1271,30 @@ body > footer {
 } */
 /* } */
 
+[grid=''] {
+	display: flex;
+	justify-items: start;
+	justify-content: space-between;
+	/* flex-wrap: wrap; */
+	align-items: stretch;
+}
+[grid=''] > div + div {
+	padding-left: var(--mainpaddng);
+}
+
+@media only screen and (min-width: 950px) {
+	[grid='desktop'] {
+		display: flex;
+		justify-items: start;
+		justify-content: space-between;
+		/* flex-wrap: wrap; */
+		align-items: stretch;
+	}
+	[grid='desktop'] > div + div {
+		padding-left: var(--mainpaddng);
+	}
+}
+
 @media only screen and (min-width: 950px) {
 	header {
 		padding: 0 calc(50vw - 500px + var(--mainpaddng));
@@ -1274,7 +1311,7 @@ body > footer {
 	aside {
 		clear: both;
 		width: 100%;
-		max-width: 280px;
+		max-width: 320px;
 		position: relative;
 		float: right;
 		margin: 0 0 var(--mainpaddng) var(--mainpaddng);
@@ -1283,7 +1320,7 @@ body > footer {
 	body > nav:first-child {
 		position: fixed;
 		z-index: 100;
-		width: 300px;
+		width: 320px;
 		padding: var(--mainpaddng);
 		left: 0;
 		top: 0;
