@@ -9,11 +9,11 @@ The idea behind Draft.css is to create the most beautiful, useful and interestin
 ### How use?
 All you have to do is add this code to the head section:
 
-`<link rel="stylesheet" href="https://kozakbartosz.github.io/Draft/draft.css" />`
+`<link rel="stylesheet" href="https://kozakbartosz.github.io/Draft/draft.min.css" />`
 
 or in your style:
 
-`@import url("https://kozakbartosz.github.io/Draft/draft.css");`
+`@import url("https://kozakbartosz.github.io/Draft/draft.min.css");`
 
 ### Demo:
 [kozakbartosz.github.io/Draft/](https://kozakbartosz.github.io/Draft/)
