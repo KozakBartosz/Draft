@@ -176,6 +176,7 @@ body {
 	color: var(--text);
 	background: var(--mainbg);
 	text-rendering: optimizeLegibility;
+	min-height: 100vh;
 }
 
 /* container */
@@ -194,6 +195,11 @@ header {
 	margin: 0 calc(var(--mainpaddng) * -1);
 }
 
+
+main {
+    flex-grow: 1;
+}
+
 main::after,
 main::before {
 	content: '';
@@ -203,7 +209,7 @@ main::before {
 
 footer {
 	/* max-width: 950px; */
-	margin: calc(var(--mainpaddng) * 3) calc(var(--mainpaddng) * -1) calc(var(--mainpaddng) * -1);
+	margin: calc(var(--mainpaddng) * 3) calc(var(--mainpaddng) * -1) 0;
 	padding: calc(var(--mainpaddng) * 3) 0;
 	position: relative;
 	text-align: center;
@@ -1480,6 +1486,7 @@ body {
 body > nav + header {
 	order: -1;
 }
+
 /* body > main {
 	order: 3;
 }
